@@ -121,7 +121,7 @@ export default function Home() {
           </p>
 
           <img
-            className="mt-10 rounded-lg object-center object-cover w-1/2 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-slate-200 transition"
+            className="mt-10 rounded-lg object-center object-cover md:w-1/2 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-slate-200 transition"
             alt="Map of the great Stockholm region"
             src="/map.png"
           />
