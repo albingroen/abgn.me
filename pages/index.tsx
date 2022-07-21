@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ExternalLinkIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 import { Fragment } from "react";
 import Seo from "../components/Seo";
 
@@ -143,6 +144,21 @@ export default function Home() {
               </a>
             ))}
           </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-lg font-semibold">Photos</h2>
+
+          <Link href="/photos" passHref>
+            <a
+              className="inline-flex items-center gap-1 underline text-slate-600 mt-4"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span className="font-medium">Photos</span>
+              <ExternalLinkIcon className="w-4 text-slate-600" />
+            </a>
+          </Link>
         </section>
 
         <section className="mt-16">
