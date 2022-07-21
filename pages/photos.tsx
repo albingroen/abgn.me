@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import { getImages } from "../lib/images";
 
@@ -39,6 +40,8 @@ function Photos({ images }: { images: string[] }) {
             ))}
           </ul>
         </section>
+
+        <Footer />
       </main>
     </>
   );

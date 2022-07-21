@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { ExternalLinkIcon } from "@heroicons/react/solid";
+import Footer from "../components/Footer";
 import Link from "next/link";
-import { Fragment } from "react";
 import Seo from "../components/Seo";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { Fragment } from "react";
 
 const links = [
   {
@@ -228,9 +229,7 @@ export default function Home() {
           </ul>
         </section>
 
-        <footer className="flex items-center justify-between mt-16">
-          <p className="text-slate-500">© 2022 Albin Groen</p>
-        </footer>
+        <Footer />
       </main>
     </>
   );
