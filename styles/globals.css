@@ -1,4 +1,4 @@
-@import url("https://rsms.me/inter/inter.css");
+@import url("../public/inter-display.css");
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply antialiased text-slate-900;
+    @apply antialiased text-neutral-900;
   }
 }

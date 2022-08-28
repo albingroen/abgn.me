@@ -105,25 +105,25 @@ export default function Home() {
             Builder and Designer
           </p>
 
-          <p className="mt-5 leading-relaxed">
+          <p className="mt-5 leading-relaxed font-medium text-lg">
             I love building things from the ground up. There&apos;s just
             something so calming and fulfilling in combining creativity with
             building. I&apos;m currently leading frontend development at{" "}
             <a
-              className="inline-flex items-center gap-1 underline text-slate-600"
+              className="inline-flex items-center gap-1 underline text-neutral-600"
               href="https://demando.io"
               rel="noopener noreferrer"
               target="_blank"
             >
               <span className="font-medium">Demando</span>
-              <ExternalLinkIcon className="w-4 text-slate-600" />
+              <ExternalLinkIcon className="w-4 text-neutral-600" />
             </a>
             , where we&apos;re building a new way to navigate your way through
             your career.
           </p>
 
           <img
-            className="mt-10 rounded-lg object-center object-cover md:w-1/2 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-slate-200 transition"
+            className="mt-10 rounded-lg object-center object-cover md:w-1/2 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-neutral-200 transition"
             alt="Map of the great Stockholm region"
             src="/map.png"
           />
@@ -135,7 +135,7 @@ export default function Home() {
           <div className="flex mt-4 items-center gap-5 flex-wrap">
             {links.map((link) => (
               <a
-                className="underline font-medium text-slate-600"
+                className="underline font-medium text-neutral-600"
                 rel="noopener noreferrer"
                 href={link.href}
                 key={link.href}
@@ -152,12 +152,12 @@ export default function Home() {
 
           <Link href="/photos" passHref>
             <a
-              className="inline-flex items-center gap-1 underline text-slate-600 mt-4"
+              className="inline-flex items-center gap-1 underline text-neutral-600 mt-4"
               rel="noopener noreferrer"
               target="_blank"
             >
               <span className="font-medium">Photos</span>
-              <ExternalLinkIcon className="w-4 text-slate-600" />
+              <ExternalLinkIcon className="w-4 text-neutral-600" />
             </a>
           </Link>
         </section>
@@ -169,17 +169,17 @@ export default function Home() {
             {workHistory.map((workItem, i) => (
               <Fragment key={workItem.heading}>
                 {i ? (
-                  <div className="h-8 w-px border-r-2 border-slate-300 border-dashed ml-11 -mt-6"></div>
+                  <div className="h-8 w-px border-r-2 border-neutral-300 border-dashed ml-11 -mt-6"></div>
                 ) : null}
 
                 <li className="flex items-start gap-2">
-                  <p className="text-slate-500 w-32 font-medium tracking-tight">
+                  <p className="text-neutral-500 w-32 font-medium tracking-tight">
                     {workItem.startYear} - {workItem.endYear}
                   </p>
 
                   <div className="flex flex-col gap-1">
                     <a
-                      className={`font-medium text-slate-600 ${
+                      className={`text-neutral-600 font-medium ${
                         workItem.website ? "underline" : ""
                       }`}
                       rel="noopener noreferrer"
@@ -189,7 +189,9 @@ export default function Home() {
                       {workItem.heading}
                     </a>
 
-                    <p className="text-sm text-slate-500">{workItem.lede}</p>
+                    <p className="text-sm text-neutral-500 font-medium">
+                      {workItem.lede}
+                    </p>
                   </div>
                 </li>
               </Fragment>
@@ -222,7 +224,7 @@ export default function Home() {
                     {project.heading}
                   </a>
 
-                  <p className="slate-500">{project.lede}</p>
+                  <p className="neutral-500">{project.lede}</p>
                 </div>
               </li>
             ))}
