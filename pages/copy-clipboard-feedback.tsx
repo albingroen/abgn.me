@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid";
 import Footer from "../components/Footer";
+import Seo from "../components/Seo";
 
 const symbol0 = "⌘";
 const symbol1 = "⌥";
@@ -20,26 +21,34 @@ function copy(c: string, toastSrOnly: boolean = true) {
 
 export default function Home() {
   return (
-    <main className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
-      <h1 className="text-2xl font-bold">Clipboard feedback</h1>
+    <>
+      <Seo
+        title="Copy to clipboard feedback"
+        description="Some examples of feedback a user could get when
+          clicking a button to copy some sort of symbol or text."
+      />
 
-      <h2 className="mt-8 text-xl font-bold">Choose a symbol</h2>
-      <p className="text-lg mt-3 font-medium">
-        These here are some examples of feedback a user could get when clicking
-        a button to copy some sort of symbol or text. Click a symbol below to
-        copy it to your clipboard.
-      </p>
+      <main className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
+        <h1 className="text-2xl font-bold">Clipboard feedback</h1>
 
-      <div className="mt-7 flex gap-3 flex-wrap p-4 bg-white border shadow-sm rounded">
-        <ButtonZero />
-        <ButtonOne />
-        <ButtonTwo />
-        <ButtonThree />
-        <ButtonFour />
-      </div>
+        <h2 className="mt-8 text-xl font-bold">Choose a symbol</h2>
+        <p className="text-lg mt-3 font-medium">
+          These here are some examples of feedback a user could get when
+          clicking a button to copy some sort of symbol or text. Click a symbol
+          below to copy it to your clipboard.
+        </p>
 
-      <Footer />
-    </main>
+        <div className="mt-7 flex gap-3 flex-wrap p-4 bg-white border shadow-sm rounded">
+          <ButtonZero />
+          <ButtonOne />
+          <ButtonTwo />
+          <ButtonThree />
+          <ButtonFour />
+        </div>
+
+        <Footer />
+      </main>
+    </>
   );
 }
 
