@@ -1,8 +1,8 @@
-import { useState } from "react";
-import toast from "react-hot-toast";
-import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
+import toast from "react-hot-toast";
+import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid";
+import { useState } from "react";
 
 const symbol0 = "⌘";
 const symbol1 = "⌥";
@@ -28,25 +28,27 @@ export default function Home() {
           clicking a button to copy some sort of symbol or text."
       />
 
-      <main className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
-        <h1 className="text-2xl font-bold">Clipboard feedback</h1>
+      <main className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-screen">
+        <div className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
+          <h1 className="text-2xl font-bold">Clipboard feedback</h1>
 
-        <h2 className="mt-8 text-xl font-bold">Choose a symbol</h2>
-        <p className="text-lg mt-3 font-medium">
-          These here are some examples of feedback a user could get when
-          clicking a button to copy some sort of symbol or text. Click a symbol
-          below to copy it to your clipboard.
-        </p>
+          <h2 className="mt-8 text-xl font-bold">Choose a symbol</h2>
+          <p className="text-lg mt-3 font-medium">
+            These here are some examples of feedback a user could get when
+            clicking a button to copy some sort of symbol or text. Click a
+            symbol below to copy it to your clipboard.
+          </p>
 
-        <div className="mt-7 flex gap-3 flex-wrap p-4 bg-white border shadow-sm rounded">
-          <ButtonZero />
-          <ButtonOne />
-          <ButtonTwo />
-          <ButtonThree />
-          <ButtonFour />
+          <div className="mt-7 flex gap-3 flex-wrap p-4 bg-white dark:bg-neutral-900 shadow-sm rounded">
+            <ButtonZero />
+            <ButtonOne />
+            <ButtonTwo />
+            <ButtonThree />
+            <ButtonFour />
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
       </main>
     </>
   );
