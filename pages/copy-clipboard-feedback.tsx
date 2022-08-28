@@ -30,10 +30,14 @@ export default function Home() {
 
       <main className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-screen">
         <div className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
-          <h1 className="text-2xl font-bold">Clipboard feedback</h1>
+          <h1 className="text-3xl font-bold dark:font-semibold dark:tracking-[0.5px]">
+            Clipboard feedback
+          </h1>
 
-          <h2 className="mt-8 text-xl font-bold">Choose a symbol</h2>
-          <p className="text-lg mt-3 font-medium">
+          <h2 className="mt-8 text-xl font-bold dark:font-semibold">
+            Choose a symbol
+          </h2>
+          <p className="text-lg mt-3 font-medium dark:font-normal">
             These here are some examples of feedback a user could get when
             clicking a button to copy some sort of symbol or text. Click a
             symbol below to copy it to your clipboard.
