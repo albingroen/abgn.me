@@ -38,7 +38,7 @@ export default function EmojiPicker() {
                   ].map((emoji) => (
                     <button
                       key={emoji.title}
-                      className="group-hover:opacity-50 hover:!opacity-100 focus:!opacity-100 text-2xl font-medium px-1.5 py-2 text-white origin-center transform hover:scale-125 focus:scale-125 hover:drop-shadow-lg focus:drop-shadow-lg transition focus:outline-none"
+                      className="group-hover:opacity-50 hover:!opacity-100 focus:!opacity-100 text-2xl font-medium px-1.5 py-2.5 text-white origin-center transform hover:scale-125 focus:scale-125 hover:drop-shadow-lg focus:drop-shadow-lg transition focus:outline-none"
                       title={emoji.title}
                       onClick={() => {
                         setS(emoji.symbol);
