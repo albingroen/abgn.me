@@ -28,7 +28,7 @@ const getPopupPanelStyles = ({
   align?: PopoverAlignment;
 }) => {
   const styles = {
-    base: "absolute bg-gradient-to-b bg-white dark:bg-neutral-700 rounded-full px-3 shadow-lg overflow-hidden z-10",
+    base: "absolute bg-gradient-to-b bg-white dark:bg-neutral-700 rounded-full shadow-lg overflow-hidden z-10",
     alignments: {
       center: "transform left-1/2 -translate-x-1/2 mt-2",
       right: "right-0 mt-2",

@@ -27,7 +27,7 @@ export default function EmojiPicker() {
           <div className="mt-8 w-min">
             <Popover
               align="center"
-              className="group"
+              className="group px-3"
               content={({ close }) => (
                 <div className="flex items-center">
                   {[
