@@ -46,6 +46,10 @@ export default function EmojiPicker() {
                         toast("Successfully sent comment");
 
                         close();
+
+                        setTimeout(() => {
+                          setV("");
+                        }, 500);
                       }
                     }}
                     type="text"
@@ -62,6 +66,10 @@ export default function EmojiPicker() {
                         if (close) {
                           close();
                         }
+
+                        setTimeout(() => {
+                          setV("");
+                        }, 500);
                       }}
                       className="h-full px-[18px] rounded-full bg-indigo-400 dark:bg-indigo-500 hover:enabled:bg-indigo-500 dark:enabled:hover:bg-indigo-600 transition shadow disabled:opacity-50 disabled:cursor-not-allowed"
                     >
