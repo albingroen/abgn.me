@@ -12,7 +12,7 @@ export default function EmojiPicker() {
     <>
       <Seo
         title="Slider component"
-        description="A slider component with micro interactions."
+        description="A slider component with micro-interactions."
       />
 
       <main className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-screen">
@@ -22,7 +22,7 @@ export default function EmojiPicker() {
           </h1>
 
           <p className="text-lg mt-3 font-medium dark:font-normal">
-            A slider component with micro interactions.
+            A slider component with micro-interactions.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-5 w-[350px]">
