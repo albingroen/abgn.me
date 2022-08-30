@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import toast from "react-hot-toast";
 import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid";
 import { useState } from "react";
+import Link from "next/link";
 
 const symbol0 = "⌘";
 const symbol1 = "⌥";
@@ -30,7 +32,19 @@ export default function Home() {
 
       <div className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-full">
         <div className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
-          <h1 className="text-3xl font-bold dark:font-semibold dark:tracking-[0.5px]">
+          <Link passHref href="/">
+            <a>
+              <img className="w-20 dark:hidden" src="/abgn.png" alt="" />
+
+              <img
+                className="hidden dark:inline-block w-20"
+                src="/abgn-white.png"
+                alt=""
+              />
+            </a>
+          </Link>
+
+          <h1 className="text-3xl font-bold dark:font-semibold dark:tracking-[0.5px] mt-20">
             Clipboard feedback
           </h1>
 
