@@ -13,7 +13,7 @@ function Photos({ images }: { images: string[] }) {
         title="Photos | Albin Groen"
       />
 
-      <main className="max-w-screen-md mx-auto py-24 px-8">
+      <div className="max-w-screen-md mx-auto py-24 px-8">
         <header>
           <h1 className="text-2xl font-semibold mt-8">Photos</h1>
 
@@ -42,7 +42,7 @@ function Photos({ images }: { images: string[] }) {
         </section>
 
         <Footer />
-      </main>
+      </div>
     </>
   );
 }

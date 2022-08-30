@@ -15,7 +15,7 @@ export default function EmojiPicker() {
         description="A simple component for picking an emoji from a smaller set of emoji."
       />
 
-      <main className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-screen">
+      <div className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-full">
         <div className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
           <h1 className="text-3xl font-bold dark:font-semibold dark:tracking-[0.5px]">
             Inline Comment
@@ -25,7 +25,7 @@ export default function EmojiPicker() {
             A simple component for commenting on something inline.
           </p>
 
-          <div className="mt-8 w-min">
+          <div className="w-min mx-auto mt-8 sm:mx-0">
             <Popover
               align="center"
               className="group"
@@ -87,7 +87,7 @@ export default function EmojiPicker() {
 
           <Footer />
         </div>
-      </main>
+      </div>
     </>
   );
 }

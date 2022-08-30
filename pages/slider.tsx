@@ -15,7 +15,7 @@ export default function EmojiPicker() {
         description="A slider component with micro-interactions."
       />
 
-      <main className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-screen">
+      <div className="bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50 min-h-full">
         <div className="max-w-screen-md mx-auto px-6 py-24 flex flex-col">
           <h1 className="text-3xl font-bold dark:font-semibold dark:tracking-[0.5px]">
             Slider
@@ -25,7 +25,7 @@ export default function EmojiPicker() {
             A slider component with micro-interactions.
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-5 w-[350px]">
+          <div className="mt-8 flex flex-col-reverse sm:flex-col items-center gap-5 w-[250px] sm:w-[350px]">
             <div className="flex items-center gap-5 w-full">
               <Slider.Root
                 step={0.01}
@@ -83,7 +83,7 @@ export default function EmojiPicker() {
 
           <Footer />
         </div>
-      </main>
+      </div>
     </>
   );
 }

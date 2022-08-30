@@ -91,7 +91,7 @@ export default function Home() {
     <>
       <Seo />
 
-      <main className="max-w-screen-md mx-auto py-24 px-8">
+      <div className="max-w-screen-md mx-auto py-24 px-8">
         <header>
           <img
             src="https://res.cloudinary.com/albin-groen/image/upload/v1657579233/ozfgz2mui85adytaafph.png"
@@ -232,7 +232,7 @@ export default function Home() {
         </section>
 
         <Footer />
-      </main>
+      </div>
     </>
   );
 }

@@ -8,7 +8,9 @@ splitbee.init();
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Component {...pageProps} />
+      <main id="container">
+        <Component {...pageProps} />
+      </main>
       <Toaster
         toastOptions={{
           position: "bottom-right",

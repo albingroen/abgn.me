@@ -6,6 +6,13 @@
 
 @layer base {
   body {
-    @apply antialiased text-neutral-900;
+    @apply antialiased text-neutral-900 overflow-hidden;
+  }
+}
+
+@layer components {
+  #container {
+    -webkit-overflow-scrolling: touch;
+    @apply h-screen overflow-y-auto;
   }
 }
