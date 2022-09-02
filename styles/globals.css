@@ -1,4 +1,4 @@
-@import url("../public/inter-display.css");
+@import url('https://rsms.me/inter/inter.css');
 
 @tailwind base;
 @tailwind components;

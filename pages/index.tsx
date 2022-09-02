@@ -107,11 +107,11 @@ export default function Home() {
 
           <h1 className="text-2xl font-semibold mt-8">Albin Groen</h1>
 
-          <p className="mt-2 text-indigo-500 font-semibold">
+          <p className="mt-2 text-indigo-500 font-medium">
             Builder and Designer
           </p>
 
-          <p className="mt-5 leading-relaxed font-medium text-lg">
+          <p className="mt-5">
             I love building things from the ground up. There&apos;s just
             something so calming and fulfilling in combining creativity with
             building. I&apos;m currently leading frontend development at{" "}
