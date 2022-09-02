@@ -93,12 +93,6 @@ export default function Home() {
 
       <div className="max-w-screen-md mx-auto py-24 px-8">
         <header>
-          <Link passHref href="/">
-            <a>
-              <img className="w-20" src="/abgn.png" alt="" />
-            </a>
-          </Link>
-
           <img
             src="https://res.cloudinary.com/albin-groen/image/upload/v1657579233/ozfgz2mui85adytaafph.png"
             className="w-20 h-20 rounded-full object-center object-cover mt-20"
