@@ -2,8 +2,27 @@
 import Footer from "../components/Footer";
 import Link from "next/link";
 import Seo from "../components/Seo";
-import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { ArrowRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
+
+const sandboxes = [
+  {
+    title: "Slider",
+    href: "/slider",
+  },
+  {
+    title: "Emoji picker",
+    href: "/emoji-picker",
+  },
+  {
+    title: "Inline comment",
+    href: "/inline-comment",
+  },
+  {
+    title: "Copy to clipboard",
+    href: "/copy-clipboard-feedback",
+  },
+];
 
 const links = [
   {
@@ -143,6 +162,28 @@ export default function Home() {
               >
                 {link.label}
               </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-lg font-semibold">Sandbox</h2>
+
+          <div className="flex items-center gap-3 flex-wrap mt-5">
+            {sandboxes.map((sandbox) => (
+              <Link href={sandbox.href} key={sandbox.title} passHref>
+                <a
+                  className="border border-slate-200 rounded-md p-5 w-full sm:max-w-xs bg-white shadow-sm hover:bg-slate-50 transition block group flex items-center justify-between hover:border-slate-300"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <h4 className="text-lg font-medium leading-none">
+                    {sandbox.title}
+                  </h4>
+
+                  <ArrowRightIcon className="w-5 text-slate-400 opacity-0 group-hover:opacity-100 transform -translate-x-5 group-hover:translate-x-0 transition" />
+                </a>
+              </Link>
             ))}
           </div>
         </section>
