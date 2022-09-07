@@ -3,7 +3,8 @@ import Footer from "../components/Footer";
 import Link from "next/link";
 import Seo from "../components/Seo";
 import { ArrowRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
-import { Fragment } from "react";
+import { StarIcon, ClipboardIcon } from "@heroicons/react/outline";
+import { Fragment, useEffect, useState } from "react";
 
 const sandboxes = [
   {
@@ -106,6 +107,17 @@ const projects = [
 ];
 
 export default function Home() {
+  const [repos, setRepos] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/albingroen/repos?sort=pushed")
+      .then((res) => res.json())
+      .then((res) => {
+        setRepos(res);
+      });
+  }, []);
+  console.info(repos);
+
   return (
     <>
       <Seo />
@@ -185,6 +197,63 @@ export default function Home() {
                 </a>
               </Link>
             ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-lg font-semibold">OSS work</h2>
+
+          <div className="relative">
+            <img
+              className="absolute w-4 top-0 right-0 transform translate-x-1.5 -translate-y-1.5 z-20"
+              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              alt=""
+            />
+
+            <ul className="mt-5 h-[300px] overflow-y-auto rounded-md border border-slate-200 rounded-md divide-y">
+              {repos
+                ?.sort((a, b) => b.stargazers_count - a.stargazers_count)
+                .map((repo) => (
+                  <li key={repo.id}>
+                    <a
+                      className="p-4 group hover:bg-slate-50 transition block"
+                      rel="noopener noreferrer"
+                      href={repo.html_url}
+                      target="_blank"
+                    >
+                      <h5 className="font-semibold text-blue-700 group-hover:underline">
+                        {repo.name}
+                      </h5>
+
+                      <p className="mt-1.5 text-sm text-slate-700">
+                        {repo.description}
+                      </p>
+
+                      <div className="flex gap-3 items-center">
+                        <div
+                          title={`${repo.stargazers_count} stars`}
+                          className="flex items-center gap-1 mt-4"
+                        >
+                          <p className="font-medium leading-none text-sm text-slate-700">
+                            {repo.stargazers_count}
+                          </p>
+                          <StarIcon className="w-3.5 text-slate-500" />
+                        </div>
+
+                        <div
+                          title={`${repo.forks_count} forks`}
+                          className="flex items-center gap-1 mt-4"
+                        >
+                          <p className="font-medium leading-none text-sm text-slate-700">
+                            {repo.forks_count}
+                          </p>
+                          <ClipboardIcon className="w-3.5 text-slate-500" />
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                ))}
+            </ul>
           </div>
         </section>
 
