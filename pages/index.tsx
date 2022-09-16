@@ -23,6 +23,10 @@ const sandboxes = [
     title: "Copy to clipboard",
     href: "/copy-clipboard-feedback",
   },
+  {
+    title: "Progress",
+    href: "/progress",
+  },
 ];
 
 const links = [
