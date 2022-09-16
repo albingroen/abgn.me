@@ -36,7 +36,7 @@ export default function Progress() {
                     className={classNames(
                       "flex-1 h-2 transition",
                       isFilled
-                        ? "bg-green-500"
+                        ? "bg-green-500 dark:bg-lime-500"
                         : "bg-neutral-300 dark:bg-neutral-600"
                     )}
                   />
