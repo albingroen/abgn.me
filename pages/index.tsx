@@ -27,6 +27,10 @@ const sandboxes = [
     title: "Progress",
     href: "/progress",
   },
+  {
+    title: "Tabs",
+    href: "/tabs",
+  },
 ];
 
 const links = [
