@@ -124,7 +124,6 @@ export default function Home() {
         setRepos(res);
       });
   }, []);
-  console.info(repos);
 
   return (
     <>
@@ -183,6 +182,23 @@ export default function Home() {
                 {link.label}
               </a>
             ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <div className="grid sm:grid-cols-2 gap-1 border rounded-xl overflow-hidden">
+            <a target="_blank" rel="noopener noreferrer" href="f1.png">
+              <img src="f1.png" alt="" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="f2.png">
+              <img src="f2.png" alt="" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="f4.png">
+              <img src="f4.png" alt="" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="f3.png">
+              <img src="f3.png" alt="" />
+            </a>
           </div>
         </section>
 
