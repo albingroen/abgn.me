@@ -186,20 +186,17 @@ export default function Home() {
         </section>
 
         <section className="mt-16">
-          <div className="grid sm:grid-cols-2 gap-1 border rounded-xl overflow-hidden">
-            <a target="_blank" rel="noopener noreferrer" href="f1.png">
-              <img src="f1.png" alt="" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="f2.png">
-              <img src="f2.png" alt="" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="f4.png">
-              <img src="f4.png" alt="" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="f3.png">
-              <img src="f3.png" alt="" />
-            </a>
-          </div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="darkmode.png"
+            className="w-full rounded-lg overflow-hidden block"
+          >
+            <img
+              src="darkmode.png"
+              alt="Light mode and dark images of a markdown editor for Mac OS"
+            />
+          </a>
         </section>
 
         <section className="mt-16">
