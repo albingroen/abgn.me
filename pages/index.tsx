@@ -86,6 +86,13 @@ const workHistory = [
 const projects = [
   {
     image:
+      "https://res.cloudinary.com/albin-groen/image/upload/v1666376433/seo_wogf0x.png",
+    lede: "Fast, desktop-first & Vim-friendly markdown editor",
+    href: "https://getnotary.app",
+    heading: "Notary",
+  },
+  {
+    image:
       "https://res.cloudinary.com/albin-groen/image/upload/w_1000/v1657094651/taskplane-private-beta_grsq47.png",
     lede: "Powerful & user-friendly project management for the modern age",
     href: "https://taskplane.app",
@@ -183,20 +190,6 @@ export default function Home() {
               </a>
             ))}
           </div>
-        </section>
-
-        <section className="mt-16">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="darkmode.png"
-            className="w-full rounded-lg overflow-hidden block"
-          >
-            <img
-              src="darkmode.png"
-              alt="Light mode and dark images of a markdown editor for Mac OS"
-            />
-          </a>
         </section>
 
         <section className="mt-16">
