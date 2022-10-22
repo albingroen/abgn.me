@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         ...fontFamily,
-        sans: ["Inter", "sans-serif"],
+        sans: ["Inter var", "Inter", "sans-serif"],
       },
     },
   },
