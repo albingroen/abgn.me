@@ -144,38 +144,25 @@ export default function Home() {
             alt=""
           />
 
-          <h1 className="text-3xl font-semibold mt-8">Albin Groen</h1>
+          <h1 className="text-3xl font-semibold mt-6">Albin Groen</h1>
 
-          <p className="mt-2 text-indigo-500 font-medium">
-            Builder and Designer
-          </p>
+          <p className="mt-2.5 font-medium">Builder and Designer</p>
 
-          <p className="mt-5">
-            I love building things from the ground up. There&apos;s just
-            something so calming and fulfilling in combining creativity with
-            building. I&apos;m currently leading frontend development at{" "}
-            <a
-              className="inline-flex items-center gap-1 underline text-neutral-600"
-              href="https://demando.io"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <span className="font-medium">Demando</span>
-              <ExternalLinkIcon className="w-4 text-neutral-600" />
-            </a>
-            , where we&apos;re building a new way to navigate your way through
-            your career.
+          <p className="mt-5 leading-relaxed">
+            Combining engineering and design to come up with beautiful and
+            easy-to-use solutions for individuals and companies. Currently
+            leading frontend development at Demando.
           </p>
 
           <img
-            className="mt-10 rounded-lg object-center object-cover md:w-1/2 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-neutral-200 transition"
+            className="mt-10 rounded-lg object-center object-cover md:w-2/3 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-neutral-200 transition"
             alt="Map of the great Stockholm region"
             src="/map.png"
           />
         </header>
 
         <div className="flex-1">
-          <section className="mt-16">
+          <section className="mt-14">
             <h2 className="text-lg font-semibold">Links</h2>
 
             <div className="flex mt-4 items-center gap-5 flex-wrap">
