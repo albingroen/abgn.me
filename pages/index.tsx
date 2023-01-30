@@ -6,8 +6,9 @@ import {
   ArrowRightIcon,
   CubeIcon,
   ExternalLinkIcon,
+  StarIcon,
 } from "@heroicons/react/solid";
-import { StarIcon, ClipboardIcon } from "@heroicons/react/outline";
+import { ClipboardIcon } from "@heroicons/react/outline";
 import { Fragment, useEffect, useState } from "react";
 
 const sandboxes = [
@@ -242,7 +243,7 @@ export default function Home() {
                           <p className="font-medium leading-none text-sm text-slate-700">
                             {repo.stargazers_count}
                           </p>
-                          <StarIcon className="w-3.5 text-slate-500" />
+                          <StarIcon className="w-3.5 text-yellow-500" />
                         </div>
 
                         <div
