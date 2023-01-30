@@ -160,7 +160,7 @@ export default function Home() {
           </p>
 
           <img
-            className="mt-10 rounded-lg object-center object-cover md:w-2/3 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-neutral-200 transition"
+            className="mt-10 rounded-lg object-center object-cover md:w-2/3 hover:transform hover:scale-110 hover:rotate-2 hover:shadow-2xl hover:shadow-neutral-200 dark:hover:shadow-black transition dark:brightness-75"
             alt="Map of the great Stockholm region"
             src="/map.png"
           />
@@ -173,7 +173,7 @@ export default function Home() {
             <div className="flex mt-4 items-center gap-5 flex-wrap">
               {links.map((link) => (
                 <a
-                  className="underline font-medium text-neutral-600 underline-offset-2"
+                  className="underline font-medium text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition underline-offset-2"
                   rel="noopener noreferrer"
                   href={link.href}
                   key={link.href}
@@ -192,13 +192,13 @@ export default function Home() {
               {sandboxes.map((sandbox) => (
                 <Link href={sandbox.href} key={sandbox.title} passHref>
                   <a
-                    className="border border-slate-200 rounded-md p-3 w-full sm:max-w-xs bg-white shadow-sm hover:bg-slate-50 transition block group flex items-center justify-between hover:border-slate-300"
+                    className="border border-slate-200 dark:border-slate-700 rounded-md p-3 w-full sm:max-w-xs bg-white dark:bg-slate-800 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition block group flex items-center justify-between hover:border-slate-300 dark:hover:border-slate-600 group"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 bg-gray-100 rounded-md flex items-center justify-center">
-                        <CubeIcon className="w-5 text-neutral-500" />
+                      <div className="h-8 w-8 bg-gray-100 dark:bg-slate-700 dark:group-hover:bg-slate-600 transition rounded-md flex items-center justify-center">
+                        <CubeIcon className="w-5 text-neutral-500 dark:text-slate-400 dark:group-hover:text-slate-300 transition" />
                       </div>
 
                       <h4 className="font-medium leading-none">
@@ -216,22 +216,22 @@ export default function Home() {
           <section className="mt-16">
             <h2 className="text-lg font-semibold">Open source work</h2>
 
-            <ul className="mt-5 h-[300px] overflow-y-auto shadow-inner rounded-md border border-slate-200 rounded-md divide-y">
+            <ul className="mt-5 h-[300px] overflow-y-auto shadow-inner rounded-md border border-slate-200 dark:border-neutral-700 rounded-md divide-y dark:divide-neutral-700">
               {repos
                 ?.sort((a, b) => b.stargazers_count - a.stargazers_count)
                 .map((repo) => (
                   <li key={repo.id}>
                     <a
-                      className="p-4 group hover:bg-slate-50 transition block"
+                      className="p-4 group hover:bg-slate-50 dark:hover:bg-neutral-800 transition block"
                       rel="noopener noreferrer"
                       href={repo.html_url}
                       target="_blank"
                     >
-                      <h5 className="font-semibold text-blue-700 group-hover:underline">
+                      <h5 className="font-semibold dark:font-medium text-blue-700 dark:text-indigo-300 group-hover:underline">
                         {repo.name}
                       </h5>
 
-                      <p className="mt-1.5 text-sm text-slate-700">
+                      <p className="mt-1.5 text-sm text-slate-700 dark:text-neutral-400">
                         {repo.description}
                       </p>
 
@@ -240,7 +240,7 @@ export default function Home() {
                           title={`${repo.stargazers_count} stars`}
                           className="flex items-center gap-1 mt-4"
                         >
-                          <p className="font-medium leading-none text-sm text-slate-700">
+                          <p className="font-medium leading-none text-sm text-slate-700 dark:text-neutral-400">
                             {repo.stargazers_count}
                           </p>
                           <StarIcon className="w-3.5 text-yellow-500" />
@@ -250,10 +250,10 @@ export default function Home() {
                           title={`${repo.forks_count} forks`}
                           className="flex items-center gap-1 mt-4"
                         >
-                          <p className="font-medium leading-none text-sm text-slate-700">
+                          <p className="font-medium leading-none text-sm text-slate-700 dark:text-neutral-400">
                             {repo.forks_count}
                           </p>
-                          <ClipboardIcon className="w-3.5 text-slate-500" />
+                          <ClipboardIcon className="w-3.5 text-slate-500 dark:text-neutral-500" />
                         </div>
                       </div>
                     </a>
@@ -267,12 +267,12 @@ export default function Home() {
 
             <Link href="/photos" passHref>
               <a
-                className="inline-flex items-center gap-1 underline text-neutral-600 mt-4"
+                className="inline-flex items-center gap-1 underline underline-offset-2 text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition mt-4 group"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <span className="font-medium">Photos</span>
-                <ExternalLinkIcon className="w-4 text-neutral-600" />
+                <ExternalLinkIcon className="w-4 text-neutral-600 dark:text-neutral-500 dark:group-hover:text-white transition" />
               </a>
             </Link>
           </section>
@@ -284,17 +284,17 @@ export default function Home() {
               {workHistory.map((workItem, i) => (
                 <Fragment key={workItem.heading}>
                   {i ? (
-                    <div className="h-8 w-px border-r-2 border-neutral-300 border-dashed ml-11 -mt-6"></div>
+                    <div className="h-8 w-px border-r-2 border-neutral-300 dark:border-neutral-700 border-dashed ml-11 -mt-6"></div>
                   ) : null}
 
                   <li className="flex items-start gap-2">
-                    <p className="text-neutral-500 w-32 font-medium tracking-tight">
+                    <p className="text-neutral-500 dark:text-neutral-400 w-32 font-medium tracking-tight">
                       {workItem.startYear} - {workItem.endYear}
                     </p>
 
                     <div className="flex flex-col gap-1">
                       <a
-                        className={`text-neutral-600 font-medium ${
+                        className={`text-neutral-600 dark:text-white font-medium ${
                           workItem.website ? "underline" : ""
                         }`}
                         rel="noopener noreferrer"
@@ -304,7 +304,7 @@ export default function Home() {
                         {workItem.heading}
                       </a>
 
-                      <p className="text-sm text-neutral-500 font-medium">
+                      <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
                         {workItem.lede}
                       </p>
                     </div>

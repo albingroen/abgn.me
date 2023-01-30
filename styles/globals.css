@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply dark:bg-neutral-900;
+  }
+
   body {
-    @apply antialiased text-neutral-900 overflow-hidden;
+    @apply antialiased text-neutral-900 dark:text-white overflow-hidden;
   }
 }
 

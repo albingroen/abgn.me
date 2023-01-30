@@ -24,7 +24,7 @@ function Photos({ images }: { images: string[] }) {
           <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {images?.map((image: string) => (
               <a
-                className="block h-[300px] w-full rounded-md bg-white p-3 pb-10 shadow shadow-stone-300 border border-stone-200 hover:transform hover:scale-110 transition duration-300"
+                className="block h-[300px] w-full rounded-md bg-white dark:bg-neutral-800 p-3 pb-10 shadow shadow-stone-300 dark:shadow-black border border-stone-200 dark:border-neutral-700 hover:transform hover:scale-110 transition duration-300"
                 rel="noopener noreferrer"
                 target="_blank"
                 href={image}
