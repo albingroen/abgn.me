@@ -17,12 +17,10 @@ function Photos({ images }: { images: string[] }) {
         <header>
           <h1 className="text-2xl font-semibold mt-8">Photos</h1>
 
-          <p className="mt-2 text-indigo-500 font-semibold">
-            A bunch of photos taken throughout the years
-          </p>
+          <p className="mt-4">A bunch of photos taken throughout the years</p>
         </header>
 
-        <section className="mt-16">
+        <section className="mt-12">
           <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {images?.map((image: string) => (
               <a
