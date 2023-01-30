@@ -213,9 +213,9 @@ export default function Home() {
           </section>
 
           <section className="mt-16">
-            <h2 className="text-lg font-semibold">OSS work</h2>
+            <h2 className="text-lg font-semibold">Open source work</h2>
 
-            <ul className="mt-5 h-[300px] overflow-y-auto rounded-md border border-slate-200 rounded-md divide-y">
+            <ul className="mt-5 h-[300px] overflow-y-auto shadow-inner rounded-md border border-slate-200 rounded-md divide-y">
               {repos
                 ?.sort((a, b) => b.stargazers_count - a.stargazers_count)
                 .map((repo) => (
