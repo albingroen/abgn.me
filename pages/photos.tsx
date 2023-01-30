@@ -35,6 +35,7 @@ function Photos({ images }: { images: string[] }) {
                 <img
                   className="object-center object-cover h-full w-full rounded-sm"
                   src={image.replaceAll("/upload", "/upload/w_500")}
+                  loading="lazy"
                 />
               </a>
             ))}
