@@ -168,7 +168,7 @@ export default function Home() {
             <div className="flex mt-4 items-center gap-5 flex-wrap">
               {links.map((link) => (
                 <a
-                  className="underline font-medium text-neutral-600"
+                  className="underline font-medium text-neutral-600 underline-offset-2"
                   rel="noopener noreferrer"
                   href={link.href}
                   key={link.href}
