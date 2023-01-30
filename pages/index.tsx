@@ -2,7 +2,11 @@
 import Footer from "../components/Footer";
 import Link from "next/link";
 import Seo from "../components/Seo";
-import { ArrowRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
+import {
+  ArrowRightIcon,
+  CubeIcon,
+  ExternalLinkIcon,
+} from "@heroicons/react/solid";
 import { StarIcon, ClipboardIcon } from "@heroicons/react/outline";
 import { Fragment, useEffect, useState } from "react";
 
@@ -187,13 +191,19 @@ export default function Home() {
               {sandboxes.map((sandbox) => (
                 <Link href={sandbox.href} key={sandbox.title} passHref>
                   <a
-                    className="border border-slate-200 rounded-md p-5 w-full sm:max-w-xs bg-white shadow-sm hover:bg-slate-50 transition block group flex items-center justify-between hover:border-slate-300"
+                    className="border border-slate-200 rounded-md p-3 w-full sm:max-w-xs bg-white shadow-sm hover:bg-slate-50 transition block group flex items-center justify-between hover:border-slate-300"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    <h4 className="text-lg font-medium leading-none">
-                      {sandbox.title}
-                    </h4>
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-8 bg-gray-100 rounded-md flex items-center justify-center">
+                        <CubeIcon className="w-5 text-neutral-500" />
+                      </div>
+
+                      <h4 className="font-medium leading-none">
+                        {sandbox.title}
+                      </h4>
+                    </div>
 
                     <ArrowRightIcon className="w-5 text-slate-400 opacity-0 group-hover:opacity-100 transform -translate-x-5 group-hover:translate-x-0 transition" />
                   </a>
