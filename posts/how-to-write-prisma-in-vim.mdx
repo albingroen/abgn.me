@@ -1,0 +1,85 @@
+---
+title: "Working With Prisma in Vim"
+date: "2021-07-01"
+author: "Albin Groen"
+excerpt: "How to set up Vim in order to write Prisma code."
+tags: ["Prisma", "Neovim", "Vim"]
+image: "https://res.cloudinary.com/albin-groen/image/upload/v1625159331/vim-prisma_lskc2i.png"
+---
+
+![Prisma & Vim logos](https://res.cloudinary.com/albin-groen/image/upload/v1625159331/vim-prisma_lskc2i.png)
+
+Prisma is a really nice set of packages that help you write your database and
+API functionality. VSCode has a Prisma extension that helps you format your
+schema files appropriately. If you're using Vim, you can actually still achieve
+this functionality with a couple of plugins. First, you're going to need some
+sort of plugin manager for Vim in order to install third-party plugins from the
+community. In my case, I use Neovim together with vim-plug.
+
+## Install vim-plug with Neovim
+
+```shell
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+And then add this to the top of your `nvim.init` file
+
+```VimScript
+call plug#begin('~/.vim/plugged')
+
+" List plugins here
+
+call plug#end()
+```
+
+## Language Servers
+
+In order to get Prisma autocompletion in Vim, the easiest way to get started is
+by using coc.nvim and installing a couple of COC plugins. Start by adding this
+to the plugins and then sourcing the file, and then running PlugInstall from
+the Vim command line.
+
+```VimScript
+" Code intellisense / autocompletion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Prisma syntax highlighting
+Plug 'pantharshit00/vim-prisma'
+```
+
+Then you simply need to run the following command to install the Prisma plugin for coc
+
+```Vim-Command
+:CocInstall coc-prisma
+```
+
+## Result
+
+### Syntax highlighting
+
+![Prisma syntax highlighting](https://res.cloudinary.com/albin-groen/image/upload/v1625131470/CleanShot_2021-07-01_at_11.23.03_jbasaj.png)
+
+### Linting
+
+![Prisma linting](https://res.cloudinary.com/albin-groen/image/upload/v1625131470/CleanShot_2021-07-01_at_11.23.33_uoggoh.png)
+
+### Formatting
+
+If you want to format the Prisma file, you can simply run the :Format command
+from within Vim. If you instead want to auto-format the file on saving, you can
+add this to the COC config file (that you can open by running :CocConfig).
+
+```json
+{
+  "coc.preferences.formatOnSaveFiletypes": ["prisma"]
+}
+```
+
+## Closing
+
+Using this setup you can quite comfortably write Prisma code inside of Vim,
+where you can get syntax highlighting, format the code, and get built-in
+linting. If you like this sort of content, consider following me on
+[Twitter](https://twitter.com/albingroen) to find out when I post next. Thank
+you for reading!

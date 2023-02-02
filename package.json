@@ -14,20 +14,23 @@
     "@radix-ui/react-slider": "^1.0.0",
     "@splitbee/web": "^0.3.0",
     "cloudinary": "^1.30.1",
-    "next": "12.2.2",
+    "gray-matter": "^4.0.3",
+    "next": "^12.2.2",
+    "next-mdx-remote": "^4.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.13",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
     "typescript": "4.7.4"
   }
 }
