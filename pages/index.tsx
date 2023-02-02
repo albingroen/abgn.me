@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/solid";
 import { ClipboardIcon } from "@heroicons/react/outline";
 import { Fragment, useEffect, useState } from "react";
+import { PROFILE_PHOTO } from "../lib/constants";
 
 const sandboxes = [
   {
@@ -144,8 +145,8 @@ export default function Home() {
       <div className="max-w-screen-md mx-auto py-24 px-8">
         <header>
           <img
-            src="https://res.cloudinary.com/albin-groen/image/upload/v1657579233/ozfgz2mui85adytaafph.png"
             className="w-20 h-20 rounded-full object-center object-cover mt-20"
+            src={PROFILE_PHOTO}
             alt=""
           />
 
@@ -260,6 +261,21 @@ export default function Home() {
                   </li>
                 ))}
             </ul>
+          </section>
+
+          <section className="mt-16">
+            <h2 className="text-lg font-semibold">Writing</h2>
+
+            <Link href="/blog" passHref>
+              <a
+                className="inline-flex items-center gap-1 underline underline-offset-2 text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition mt-4 group"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="font-medium">Albins&apos; blog</span>
+                <ExternalLinkIcon className="w-4 text-neutral-600 dark:text-neutral-500 dark:group-hover:text-white transition" />
+              </a>
+            </Link>
           </section>
 
           <section className="mt-16">
