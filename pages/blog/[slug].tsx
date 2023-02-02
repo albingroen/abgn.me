@@ -59,7 +59,7 @@ export default function BlogPost({
           <a className="link">&larr; All posts</a>
         </Link>
 
-        <article className="mt-8 flex flex-col prose prose-neutral dark:prose-invert prose-headings:font-semibold prose-img:rounded-lg prose-img:border dark:prose-img:border-none max-w-none">
+        <article className="mt-8 flex flex-col prose prose-neutral dark:prose-invert prose-headings:font-semibold prose-img:rounded-lg max-w-none">
           <h1 className="text-3xl leading-normal !mb-0 !mt-0">
             {frontMatter.title}
           </h1>
