@@ -92,6 +92,13 @@ const workHistory = [
 const projects = [
   {
     image:
+      "https://res.cloudinary.com/albin-groen/image/upload/v1675554630/notary-ios-seo_ckjjmj.png",
+    lede: "Stores and encrypts your notes on-device to keep them as safe as possible.",
+    href: "https://getnotary.app/ios",
+    heading: "Notary for iOS",
+  },
+  {
+    image:
       "https://res.cloudinary.com/albin-groen/image/upload/v1666376433/seo_wogf0x.png",
     lede: "Fast, desktop-first & Vim-friendly markdown editor",
     href: "https://getnotary.app",
