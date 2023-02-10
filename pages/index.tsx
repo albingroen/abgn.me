@@ -49,6 +49,10 @@ const links = [
     href: "https://github.com/albingroen",
   },
   {
+    label: "Layers",
+    href: "https://layers.to/abgn",
+  },
+  {
     label: "Dribbble",
     href: "https://dribbble.com/albingroen",
   },
