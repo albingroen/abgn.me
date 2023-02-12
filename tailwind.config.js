@@ -10,9 +10,12 @@ module.exports = {
     extend: {
       fontFamily: {
         ...fontFamily,
-        sans: ["Inter var", "Inter", "sans-serif"],
+        sans: ["var(--font-inter)"],
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+  ],
 };

@@ -9,9 +9,9 @@ interface SeoProps {
 }
 
 const Seo = ({
-  description = "I love building things from the ground up. There's just something so calming and fulfilling in combining creativity with building. I'm currently leading frontend development at Demando , where we're building a new way to navigate your way through your career.",
-  image = "https://res.cloudinary.com/albin-groen/image/upload/w_1000/v1658324932/abgn-seo_aa83lu.png",
-  title = "Albin Groen - Builder and Designer",
+  description = "Using code and design to craft beautiful & accessible digital solutions. I currently lead frontend development at Demando.",
+  image = "https://res.cloudinary.com/albin-groen/image/upload/f_auto,q_auto/v1676244126/abgn-seo_hz17oc.png",
+  title = "Hej, I'm Albin",
   url = "https://abgn.me",
   canonicalUrl,
 }: SeoProps) => {

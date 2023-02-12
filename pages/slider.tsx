@@ -3,9 +3,8 @@ import * as Slider from "@radix-ui/react-slider";
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import classNames from "../lib/classNames";
-import { UserGroupIcon, UserIcon, UsersIcon } from "@heroicons/react/solid";
+import { UserGroupIcon, UserIcon, UsersIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function EmojiPicker() {
   const [v, setV] = useState<number>(1.2);

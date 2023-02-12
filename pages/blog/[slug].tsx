@@ -8,6 +8,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { SITE_URL } from "../../lib/constants";
 import { getAllPostSlugs, getPostdata } from "../../lib/posts";
 import { serialize } from "next-mdx-remote/serialize";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export const getStaticProps: GetStaticProps<{
   source: MDXRemoteSerializeResult<
@@ -55,8 +56,9 @@ export default function BlogPost({
       />
 
       <div className="max-w-screen-md mx-auto py-24 px-6 md:px-8">
-        <Link passHref href="/blog">
-          <a className="link">&larr; All posts</a>
+        <Link href="/blog" className="link inline-flex items-center gap-2">
+          <ArrowLeftIcon className="w-4" />
+          <span>All posts</span>
         </Link>
 
         <article className="mt-8 flex flex-col prose prose-neutral dark:prose-invert prose-headings:font-semibold prose-img:rounded-lg max-w-none">

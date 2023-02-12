@@ -3,9 +3,11 @@ import Footer from "../components/Footer";
 import Popover from "../components/Popover";
 import Seo from "../components/Seo";
 import toast from "react-hot-toast";
-import { ChatIcon, PaperAirplaneIcon } from "@heroicons/react/solid";
+import {
+  ChatBubbleLeftIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/solid";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function EmojiPicker() {
   const [v, setV] = useState<string>("");
@@ -82,7 +84,7 @@ export default function EmojiPicker() {
               )}
             >
               <button className="rounded-md bg-neutral-200 dark:bg-neutral-700 h-12 w-12 flex items-center justify-center hover:bg-neutral-300 dark:hover:bg-neutral-600 transition focus:outline-none">
-                <ChatIcon className="w-6" />
+                <ChatBubbleLeftIcon className="w-6" />
               </button>
             </Popover>
           </div>

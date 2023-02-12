@@ -2,9 +2,8 @@
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import toast from "react-hot-toast";
-import { CheckCircleIcon, CheckIcon } from "@heroicons/react/solid";
+import { CheckCircleIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import Link from "next/link";
 
 const symbol0 = "⌘";
 const symbol1 = "⌥";

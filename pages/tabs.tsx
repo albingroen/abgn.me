@@ -2,12 +2,12 @@
 import Footer from "../components/Footer";
 import Seo from "../components/Seo";
 import { useState } from "react";
-import { CogIcon, EyeIcon, UsersIcon } from "@heroicons/react/outline";
+import { Cog8ToothIcon, EyeIcon, UsersIcon } from "@heroicons/react/24/outline";
 import {
   EyeIcon as EyeIconSolid,
-  CogIcon as CogIconSolid,
+  Cog8ToothIcon as CogIconSolid,
   UsersIcon as UsersIconSolid,
-} from "@heroicons/react/solid";
+} from "@heroicons/react/24/solid";
 import classNames from "../lib/classNames";
 
 const TABS = [
@@ -23,7 +23,7 @@ const TABS = [
   },
   {
     label: "Settings",
-    icon: CogIcon,
+    icon: Cog8ToothIcon,
     iconSolid: CogIconSolid,
   },
 ];

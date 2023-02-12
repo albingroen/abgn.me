@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply antialiased text-neutral-900 dark:text-white overflow-hidden;
+    @apply antialiased text-neutral-900 overflow-hidden dark:text-white;
   }
 }
 
@@ -24,5 +24,45 @@
 
   .link-child {
     @apply group-hover:underline font-medium text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition underline-offset-2;
+  }
+
+  .selection-light {
+    @apply selection:bg-neutral-900 selection:text-white dark:selection:bg-white dark:selection:text-neutral-900;
+  }
+
+  .selection-dark {
+    @apply selection:bg-white selection:text-neutral-900;
+  }
+
+  .repos::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-button {
+    @apply z-20 rounded-full bg-white dark:bg-gray-900 filter hover:brightness-95 active:brightness-90 dark:hover:brightness-125 dark:active:brightness-150 filter shadow-md hover:shadow-lg h-14 w-14 absolute top-1/2 transition transform -translate-y-1/2 flex items-center justify-center;
+  }
+
+  .bg-grid {
+    background-size: 20px 20px;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.04) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  }
+
+  .bg-grid-dark {
+    background-size: 20px 20px;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.015) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.015) 1px,
+        transparent 1px
+      );
   }
 }

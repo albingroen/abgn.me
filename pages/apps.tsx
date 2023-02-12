@@ -2,7 +2,10 @@
 import Footer from "../components/Footer";
 import Link from "next/link";
 import Seo from "../components/Seo";
-import { ExternalLinkIcon } from "@heroicons/react/outline";
+import {
+  ArrowLeftIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/react/24/outline";
 
 const APPS = [
   {
@@ -104,15 +107,13 @@ export default function Apps() {
 
       <div className="max-w-screen-md mx-auto py-24 px-8">
         <header>
-          <Link passHref href="/">
-            <a className="text-blue-500 hover:underline font-medium">
-              &larr; Home
-            </a>
+          <Link href="/" className="link inline-flex items-center gap-2">
+            <ArrowLeftIcon className="w-4" /> <span>Home</span>
           </Link>
 
           <h1 className="text-3xl font-semibold mt-5">
             My{" "}
-            <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 px-2 py-0.5 rounded rounded-tl-lg rounded-br-xl">
+            <span className="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 px-2 py-0.5 rounded rounded-tl-lg rounded-br-xl dark:text-black">
               <i>favourite</i>
             </span>{" "}
             apps
@@ -136,8 +137,8 @@ export default function Apps() {
                 rel="noopener noreferrer"
                 className="group py-1 block"
               >
-                <div className="flex items-center gap-6 py-4 sm:py-5 sm:pr-8 rounded-lg sm:-mx-24 sm:group-hover:bg-slate-100 transition duration-100">
-                  <div className="hidden sm:block h-2 w-2 rounded-full bg-slate-300 rounded-full opacity-0 group-hover:opacity-100 transition duration-100 ml-12 mr-3" />
+                <div className="flex items-center gap-6 py-4 sm:py-5 sm:pr-8 rounded-lg sm:-mx-24 sm:group-hover:bg-slate-100 dark:sm:group-hover:bg-neutral-800 transition duration-100">
+                  <div className="hidden sm:block h-2 w-2 rounded-full bg-slate-300 dark:bg-neutral-700 rounded-full opacity-0 group-hover:opacity-100 transition duration-100 ml-12 mr-3" />
 
                   <div className="flex items-center justify-between flex-1">
                     <div className="flex items-center gap-6">
@@ -157,7 +158,7 @@ export default function Apps() {
                       </div>
                     </div>
 
-                    <ExternalLinkIcon className="hidden sm:block w-5 text-slate-500 opacity-0 group-hover:opacity-100 transition duration-100" />
+                    <ArrowTopRightOnSquareIcon className="hidden sm:block w-5 text-slate-500 opacity-0 group-hover:opacity-100 transition duration-100" />
                   </div>
                 </div>
               </a>

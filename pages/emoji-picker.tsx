@@ -2,9 +2,8 @@
 import Footer from "../components/Footer";
 import Popover from "../components/Popover";
 import Seo from "../components/Seo";
-import { PlusIcon } from "@heroicons/react/solid";
+import { PlusIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function EmojiPicker() {
   const [s, setS] = useState<string>();
