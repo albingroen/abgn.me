@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from "../components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import Seo from "../components/Seo";
 import classNames from "../lib/classNames";
@@ -14,11 +15,10 @@ import {
   RocketLaunchIcon,
   TableCellsIcon,
 } from "@heroicons/react/24/outline";
+import { ArrowUpIcon, CheckIcon } from "@heroicons/react/20/solid";
 import { PROFILE_PHOTO } from "../lib/constants";
 import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpIcon, CheckIcon } from "@heroicons/react/20/solid";
 import { differenceInMonths } from "date-fns";
-import Image from "next/image";
 
 const REPO_SPACING = 12;
 
@@ -525,6 +525,16 @@ export default function Home() {
               })}
             </ul>
           </div>
+        </section>
+
+        <section className="bg-neutral-100 dark:bg-neutral-800 w-full flex items-center justify-center">
+          <Image
+            src="/office.JPG"
+            alt=""
+            className="object-cover object-center"
+            width={1920}
+            height={1080}
+          />
         </section>
 
         <section className="w-full py-20 sm:py-32 flex flex-col items-center justify-center">
