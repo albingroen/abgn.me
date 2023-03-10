@@ -527,6 +527,42 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 bg-neutral-900 w-full text-white">
+          <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center px-8">
+            <img
+              className="max-w-[150px] md:max-w-[200px] rounded-xl border-t border-neutral-800"
+              src="/recursive.png"
+              alt=""
+            />
+
+            <h2 className="text-4xl sm:text-5xl leading-tight font-semibold tracking-tight mt-8 md:mt-10">
+              Recursive podcast
+            </h2>
+
+            <p className="mt-4 md:mt-7 text-lg md:text-xl text-center max-w-xl leading-relaxed md:leading-loose font-light text-neutral-300">
+              I also host a podcast about tech, design, side-projects and a
+              bunch of other stuff with my friend,{" "}
+              <a
+                className="opacity-50 hover:opacity-100 underline underline-offset-4 decoration-1"
+                href="https://twitter.com/sgnilreutr"
+              >
+                Robbert Tuerlings
+              </a>
+              . Check it out if that sounds interesting to you!
+            </p>
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://recursivepod.com"
+              className="mt-8 md:mt-10 inline-flex gap-2 text-lg rounded-full py-3 px-6 border border-neutral-600 hover:border-white transition rounded-full"
+            >
+              <span>Visit our site</span>
+              <ArrowRightIcon className="w-5" />
+            </a>
+          </div>
+        </section>
+
         <section className="bg-neutral-100 dark:bg-neutral-800 w-full flex items-center justify-center">
           <Image
             src="/office.JPG"
