@@ -170,6 +170,12 @@ const workHistory = [
 
 const projects = [
   {
+    heading: "Raycast SL extension",
+    lede: "View public transport departures in Stockholm directly in Raycast.",
+    href: "https://www.raycast.com/albingroen/stockholm-public-transport",
+    image: "https://files.raycast.com/c6cu9jjwcgu0rqvghtl8kjcz05bv",
+  },
+  {
     image:
       "https://res.cloudinary.com/albin-groen/image/upload/v1675554630/notary-ios-seo_ckjjmj.png",
     lede: "Straight forward iOS notes app that stores and encrypts your notes on-device.",
