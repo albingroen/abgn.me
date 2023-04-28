@@ -473,7 +473,13 @@ export default function Home() {
             <ul className="mt-14 sm:mt-20">
               {workHistory.map((work, i) => {
                 const Icon =
-                  work.endYear === "Current" ? CheckIcon : ArrowUpIcon;
+                  work.endYear === "Current"
+                    ? () => (
+                        <span className="leading-none text-[#84F79F] dark:text-emerald-800 brightness-75 dark:brightness-100">
+                          &bull;
+                        </span>
+                      )
+                    : CheckIcon;
 
                 const months =
                   i === workHistory.length - 1
