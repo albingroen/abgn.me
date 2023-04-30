@@ -282,8 +282,8 @@ export default function Home() {
           </div>
 
           <p className="mt-10 sm:mt-[52px] text-2xl sm:text-3xl font-light leading-normal sm:leading-normal selection-light">
-            Using code and design to craft beautiful & accessible digital
-            solutions. I currently lead frontend development at Demando.
+            Using code and design to craft beautiful & accessible products. I
+            currently lead front-end development at Demando.
           </p>
 
           <Image
