@@ -14,7 +14,7 @@ export async function getImages() {
   const result = await cloudinary.api.resources({
     type: "upload",
     prefix: "abgn.me",
-    max_results: 100,
+    max_results: 200,
   });
 
   const images = result?.resources
