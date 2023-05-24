@@ -55,6 +55,11 @@ const sandboxes = [
     href: "/tabs",
     icon: TableCellsIcon,
   },
+  {
+    title: "Steps",
+    href: "/steps",
+    icon: ArrowRightIcon,
+  },
 ];
 
 const links = [
