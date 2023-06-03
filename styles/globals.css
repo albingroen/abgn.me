@@ -9,6 +9,7 @@
 
   body {
     @apply antialiased text-neutral-900 overflow-hidden dark:text-white;
+    text-rendering: optimizeLegibility;
   }
 }
 
