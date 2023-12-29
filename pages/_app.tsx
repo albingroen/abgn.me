@@ -1,8 +1,9 @@
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import splitbee from "@splitbee/web";
-import { Toaster } from "react-hot-toast";
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "@next/font/google";
+import { Toaster } from "react-hot-toast";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -16,6 +17,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <main id="container" className={`${inter.variable} font-sans`}>
         <Component {...pageProps} />
+
+        <Analytics />
 
         <Toaster
           toastOptions={{
