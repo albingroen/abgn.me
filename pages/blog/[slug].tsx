@@ -1,14 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
+import Article from "../../components/Article";
 import Link from "next/link";
 import Seo from "../../components/Seo";
 import matter from "gray-matter";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { BlogPostFrontMatter } from "../../types";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { SITE_URL } from "../../lib/constants";
 import { getAllPostSlugs, getPostdata } from "../../lib/posts";
 import { serialize } from "next-mdx-remote/serialize";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 export const getStaticProps: GetStaticProps<{
   source: MDXRemoteSerializeResult<
@@ -61,15 +61,7 @@ export default function BlogPost({
           <span>All posts</span>
         </Link>
 
-        <article className="mt-8 flex flex-col prose prose-neutral dark:prose-invert prose-headings:font-semibold prose-img:rounded-lg max-w-none">
-          <h1 className="text-3xl leading-normal !mb-0 !mt-0">
-            {frontMatter.title}
-          </h1>
-
-          <p className="!text-neutral-500 !mb-0">{frontMatter.date}</p>
-
-          <MDXRemote {...source} />
-        </article>
+        <Article frontMatter={frontMatter} source={source} />
       </div>
     </>
   );
