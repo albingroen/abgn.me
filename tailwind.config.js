@@ -1,21 +1,14 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      fontFamily: {
-        ...fontFamily,
-        sans: ["var(--font-inter)"],
-      },
-    },
-  },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
-  ],
+export default {
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {
+			colors: {
+				gray: colors.stone
+			}
+		}
+	},
+	plugins: [require('@tailwindcss/typography')]
 };

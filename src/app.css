@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply p-10 bg-orange-100 dark:bg-stone-900;
+	}
+
+	::-moz-selection {
+		@apply bg-orange-300 !text-black;
+	}
+
+	::selection {
+		@apply bg-orange-300 !text-black;
+	}
+}
+
+@layer components {
+	.markdown {
+		@apply dark:prose-invert prose prose-stone prose-headings:font-semibold prose-a:underline-offset-2 prose-a:decoration-stone-400;
+	}
+}
