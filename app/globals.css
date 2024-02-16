@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    @apply dark:bg-stone-900;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .link {
+    @apply hover:underline underline-offset-2;
+  }
+}
