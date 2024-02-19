@@ -1,0 +1,20 @@
+---
+title: "MacOS Big Sur Loading Component"
+date: "2020-12-23"
+author: "Albin Groen"
+excerpt: "A look into, and an implementation, of the the MacOS Big Sur loading icon"
+tags: ["React.js", "Big sur", "component"]
+---
+
+In the latest update of MacOS, version 11 (Big Sur), the animation for displaying loading states was updated. In this new version the animation is a back and forth bounce from the left side to the right one, and back again. I thought this was quite a interesting animation for showing if something is loading and took upon the challange to implement this animation as a reusable React.js component.
+
+![React implementation of the MacOS Big Sur loading animation](https://res.cloudinary.com/albin-groen/image/upload/v1608761326/react-big-sur-loading-component_xohxh7.gif)
+
+The interesting part of this animation is that it appears that the blue part of the line gets smaller as it's moving towards one end of the line. This isn't actually the case, at least in my implementation. In my version the blue line never gets smaller, instead, it passes each corner almost the length of it self, before it switches direction. This causes the illusion that the line is actually changing in width.
+
+---
+
+## Resources
+
+- [Code and demo](https://codepen.io/albingroen/pen/VwKaGNg)
+- [MacOS Big Sur](https://www.apple.com/macos/big-sur/)

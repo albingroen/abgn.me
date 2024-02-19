@@ -1,0 +1,93 @@
+---
+title: "How to set up Ant Design with Next.js"
+date: "2021-04-20"
+author: "Albin Groen"
+excerpt: "How to set up Ant Design with Next.js and get custom theming working"
+tags: ["React.js", "Next.js", "Ant", "design"]
+---
+
+In this article we'll be covering how to make Ant Design with custom theming work flawlessly together with Next.js. Start by setting up your Next.js project.
+
+```shell
+yarn create next-app my-next-app
+```
+
+## TypeScript
+
+Now let's quickly also set up Typescript. This is done by simply renaming your index file from index.js to index.tsx, and adding a couple of dependencies.
+
+```shell
+mv pages/index.js pages/index.tsx
+```
+
+<br />
+
+```shell
+yarn add -D typescript @types/react @types/node
+```
+
+---
+
+## Ant Design
+
+Now, let's install the necessary packages to get Ant Design with custom theming working.
+
+```shell
+yarn add antd next-plugin-antd-less@^0.3.0 babel-plugin-import
+```
+
+After installing these dependencies, we need to add some content to a _next.config.js_ file. If it doesn't already exist, go ahead and create it, at the root of the project. Add the following content.
+
+```javascript
+// next.config.js
+
+const withAntdLess = require("next-plugin-antd-less");
+
+module.exports = withAntdLess({
+  lessVarsFilePath: "./styles/antd.less",
+  webpack(config) {
+    return config;
+  },
+});
+```
+
+Now, as you see in the code snippet above, we're pointing to a less file that should contain all the custom Ant Design variables. This file currently does not exist, so we need to add it. Go ahead and create a new _antd.less_ file in the _styles_ directory. Also, go ahead and add a couple of variables, so we have something to test with.
+
+```less
+# styles/antd.less
+
+@primary-color: #477593;
+@border-radius-base: 5px;
+@body-background: #f7f7f7;
+```
+
+The last thing we need to do is to set up a custom babel configuration. This is fairly easy and just requires you to add a couple of lines to a _.babelrc.js_ file, which you can also create if it doesn't already exist.
+
+```javascript
+// .babelrc.js
+
+module.exports = {
+  presets: [["next/babel"]],
+  plugins: [["import", { libraryName: "antd", style: true }]],
+};
+```
+
+Now you should be all good to go. Start the dev server by running
+
+```shell
+yarn dev
+```
+
+And then add a couple of components in the index file to make sure everything works.
+
+```javascript
+import { Button } from "antd";
+
+export default function Home() {
+  return <Button type="primary">Custom button</Button>;
+}
+```
+
+If the button now shows up in a green color instead of a blue one, the implementation is successful. If something did not work, try upgrading or downgrading to different versions of _next-plugin-antd-less_ or _babel-plugin-import_. Thanks for reading!
+
+![Green button](https://res.cloudinary.com/albin-groen/image/upload/v1618901698/CleanShot_2021-04-20_at_08.54.45_2x_u44pjc.png)

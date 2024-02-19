@@ -1,0 +1,70 @@
+---
+title: "I built a health tracker website"
+date: "2021-04-13"
+author: "Albin Groen"
+excerpt: "How and why I built a health tracker application."
+tags: ["indie-hacking", "React.js", "self"]
+---
+
+## Introduction
+
+So, this weekend I decided to build a health tracker application that would exactly fit the needs and requirements that I had. I thought this was a good idea because I noticed that I'd gained some weight during the pandemic, and had gotten out of the rhythm of working out. I realized that I had to start changing some habits. I slowly started the eat healthier and signed up for a gym membership. I had done this whole thing before, but without really achieving any noticeable results. So I decided to build an application where I could track my progress. Not only when it came to weight, but also mood, sleep, and working out.
+
+---
+
+## The API
+
+### Technologies
+
+- Node.js
+- Express
+- MongoDB
+- JWT's
+
+### Description
+
+I decided that I wanted to make it as easy as possible for myself to register records every day, so I didn't mess around with trying to make the application dynamic for different people and what they would want to track themselves. I set up a couple of different data points, like weight, workout amount (in minutes), sleep amount (in hours), and a mood score (0-10). I set up an Express application for this with a MongoDB database. I used Mongoose to clearly define my schemas. I called this entity just Record. I defined the schema, created a cloud database instance, and connected it all. I also actually did set up user accounts, since I did want to allow others to use this too if they would find it useful.
+
+After this, I started testing the API using Postman, and everything worked fine. I was a little bit unsure about how to store all these values, but I ended up storing sleep amount and workout amount in milliseconds. So basically 8 hours of sleep would be entered as 1000 \* 60 \* 60 \* 8 milliseconds in the database document. For the mood amount and weight, I just stored them as simple Int32 fields. This seemed to work fine. I also connected each Record document to a \_user field, which pointed to the user id that had created the document. This would allow me to fetch all records for the logged-in user.
+
+---
+
+## The Frontend
+
+### Technologies
+
+- Ant Design
+- Recharts
+- Next.js
+- Auth0
+- SWR
+
+### Description
+
+When it came to the frontend part of this project, I felt the same way as I did regarding the API. I wanted to make it as easy as possible to create new records, so I wouldn't have to fiddle around with this every time I wanted to use it. I ended up going with Next.js, since it's pretty easy to get up and running with, and it's incredibly easy to host on Vercel. Regarding the components I went with a prebuilt library called Ant Design, I themed it a bit though, to make it a bit nicer to look at. It basically has every single component you could dream about, and I didn't have time to build these myself, especially not for a small project like this. So this was a perfect fit.
+
+I started with setting up the authentication bit, so I would have that out of the way. I've used Auth0 for a couple of projects at this point, and each time I integrate it, it just gets easier and easier. There are a couple of hiccups each time, but they usually just sort themselves out. What I really enjoy about Auth0 is that I don't have to care at all about where to store tokens, when to ask for new ones, etc. You just plug and play really. The part that you have to remember to do though is to actually store users in your own database as well. Auth0 isn't meant to replace your user table, it's just a tool of authenticating human beings on the web basically. I've made this mistake before.
+
+After this, I installed SWR to use for data fetching. I tend to stick to REST instead of GraphQL when it comes to small projects like these. I don't want to have to deal with the overhead of managing resolvers, schemas, and types, etc. I just want to build a stable and easy-to-use the application, as fast as possible really. SWR is a really nice utility by the Vercel team, that allows you request HTTP resources very similiraly to the GraphQL Apollo client interface, which is pretty nice. They also handle all caching, and revalidation for you, so you don't have to worry about that.
+
+I set up a basic table with columns for each data point that uses the user's records retrieved from the API. Here I also made sure to format the sleep and workout amount millisecond values with moment.js. That's basically just done like this:
+
+```
+moment().duration(msValue, 'milliseconds').as('hours')
+```
+
+This is a really nice utility, which let me focus on other things than having to parse millisecond values into hours, minutes, and seconds for example. What would we do without Moment.js?
+
+![records table](https://res.cloudinary.com/albin-groen/image/upload/v1618316815/CleanShot_2021-04-13_at_14.26.23_uea2oh.png)
+
+![create record modal](https://res.cloudinary.com/albin-groen/image/upload/v1618316913/CleanShot_2021-04-13_at_14.28.04_ychkjc.png)
+
+---
+
+### Statistics
+
+The other thing I really wanted in this self tracker was the possibility to somehow see how my datapoints evolved over time, how me sleep correlated with my mood and workout, how much weight I lost or gained over a period of time etc. Since I now had all the data necessary to show these statistics, all I had to do was to find a charting library for React that I liked. I ended up going with recharts.js. It's a very lean and well-used library with many different chart variants, and it's pretty easy to use, as well as to customize. I had also used this previously on other projects, so I was pretty used to it.
+
+![statistics section](https://res.cloudinary.com/albin-groen/image/upload/v1618317251/CleanShot_2021-04-13_at_14.33.47_h7ykxh.png)
+
+So, in essence that's how I built a self tracker application in a weekend. If you want to try it out, you can find the website at [www.johnapp.vercel.app](https://johnapp.vercel.app). Yes, it's named John. When I thought of tracking human development, John Doe came to mind pretty quickly, and I couldn't really find any other applications named John. I even created logo for it! If you made it all the way down here, consider following me on twitter [@albingroen](https://twitter.com/albingroen). Have a nice day!

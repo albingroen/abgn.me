@@ -1,0 +1,68 @@
+---
+title: "Prisma, Next.js, & Postgres Pitfalls"
+date: "2021-05-11"
+author: "Albin Groen"
+excerpt: "Challenges, learnings, and takeaways from using a modern but untested tech stack"
+image: "https://res.cloudinary.com/albin-groen/image/upload/v1620757202/prisma-next-postgres_lje2i8.png"
+tags: ["Prisma", "PostgresQL", "SQL", "JavaScript", "Typescript"]
+---
+
+![Prisma Next.js Postgres icons](https://res.cloudinary.com/albin-groen/image/upload/v1620757202/prisma-next-postgres_lje2i8.png)
+
+## So, let's go through what happened this week
+
+At the beginning of the week, I finished up some final touches on a project that I'd been working for a couple of weeks. When setting out to build this project my initial decision was the use Next.js since I really enjoy working in React. I'd heard a lot of interesting things about Prisma, so I thought I'd give that a shot. When it came to the database there wasn't really a whole lot to choose from, so I went with the one I was most comfortable with, PostgreSQL, since Prisma mostly supports SQL databases (although they have a MongoDB adapter coming).
+
+During the development, it all really was a breeze. It was so easy to create the schemas, run the migrations, and use the Prisma client. It almost felt too good to be true. When it came to deploying everything to Vercel, that's when the issues started coming.
+
+---
+
+### 1. Database connectivity
+
+When deploying to production a read a little bit about where people usually get hosted Postgres databases, and Digitalocean seemed like a pretty good alternative. With their "1-click" solution, I really quickly got a production-ready database up and running. The issue I ran into here though lies in the serverless factor of deploying to Vercel and using API Routes. The issue was that the number of active connections to the database would really just skyrocket after a couple of minutes.
+
+#### Solution
+
+The solution to this is to set up something called **connection pools** for your database. In Digitalocean this was really easy to do, and you can [read more about it here](https://docs.digitalocean.com/products/databases/postgresql/how-to/manage-connection-pools/). There's also this really great [YouTube video](https://www.youtube.com/watch?v=tsOHw2T1HvI) where an employee at Prisma (Daniel Norman) goes through how to solve this.
+
+---
+
+### 2. Geographical location
+
+Another issue that I ran into was the fact that I had all of my services, Next.js client, Next.js API routes, and database deployed all in different geographical locations. This plays a pretty big factor when it comes to lowering the time it takes for the requests to run.
+
+#### Solution
+
+You want to make sure that you locate all your services in roughly the same geographical area (the closer the better to each other the better). [Here](https://vercel.com/docs/edge-network/regions) you can read more about how to set your region for the Next.js client, and [here](https://vercel.com/docs/serverless-functions/regions) you can read more about how to do it for the API routes. Unfortunately, you can only set the geographical location for the API routes if you're on a Pro Team plan. I think this a pretty uncool move.
+
+---
+
+### 3. Authentication
+
+The last, but probably biggest, issue that I encountered was with using [next-auth](https://next-auth.js.org) for authentication. It turned out that when using session-based authentication with next-auth, the execution time for the API routes was substantially slower than when using JWT based authentication.
+
+```bash
+--- With session-based auth
+
+/api/forums:
+433.92 ms
+
+--- With JWT based auth
+
+/api/forums:
+131.77 ms
+```
+
+#### Solution
+
+You want to make sure that you manually opt into using JWT based authentication if you're using next-auth as your authentication handler. [Here](https://next-auth.js.org/faq#json-web-tokens) you can read more about next-auth and JWT's, and [here](https://next-auth.js.org/tutorials/securing-pages-and-api-routes#using-gettoken) you can see how to actually secure your API routes using JSON Web Tokens instead of sessions.
+
+## Conlusion
+
+Using a modern but untested stack will always be challenging. I really enjoyed working with this stack (especially in development mode), and therefore got pretty frustrated when I ran into so many issues when going into production. A couple of things that I still find a little bit annoying, but that I can't really get away from is that:
+
+1. Cold starts will always be an issue when working in a serverless environment
+2. Joins (_"includes"_ in Prisma) will add a certain amount of extra delay to the execution time.
+   - I think you have to make some sort of evaluation here for yourself whether you want to put off this to the execution time by doing a lot of includes, or whether you want to make more requests on the client instead.
+
+If you want to read more about the process of discovering these issues, solutions, and measurements, you can take a look at [this GitHub issue](https://github.com/prisma/prisma/issues/7009). And, if you like this sort of content, you can follow me on Twitter [@albingroen](https://twitter.com/albingroen).

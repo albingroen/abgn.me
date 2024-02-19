@@ -15,6 +15,6 @@
 
 @layer components {
   .link {
-    @apply hover:underline underline-offset-2;
+    @apply underline underline-offset-4 decoration-1 hover:text-gray-500 dark:hover:text-gray-400 transition decoration-gray-500;
   }
 }
