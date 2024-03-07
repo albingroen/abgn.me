@@ -1,5 +1,4 @@
 import "../styles/globals.css";
-import splitbee from "@splitbee/web";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "@next/font/google";
@@ -9,8 +8,6 @@ export const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
-
-splitbee.init();
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
