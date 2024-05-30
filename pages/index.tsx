@@ -126,9 +126,16 @@ const links = [
 
 const workHistory = [
   {
+    heading: "Boulder · TV4",
+    startYear: "Apr 2024",
+    endYear: "Current",
+    website: "https://tv4play.se",
+    lede: "Through a really fun constultancy group, I currently get to work as a senior frontend engineer at Sweden's channel 4 (TV4). Here I get to help build their streaming service, TV4 play, which has millions of users. This requires a great focus on scale, stability and quality.",
+  },
+  {
     heading: "Demando",
     startYear: "Aug 2021",
-    endYear: "Current",
+    endYear: "Apr 2024",
     website: "https://demando.io",
     lede: "Working as a Lead Frontend Developer on a web recruiting platform built using React.js and Typescript for the frontend, and Node.js, Typescript, GraphQL, and PostgresQL for the backend. Getting familiar with GCP (Google Cloud Platform.) and having the opportunity to influence a lot on design and architecture.",
   },
@@ -231,7 +238,7 @@ export default function Home() {
       <div className="pb-32 sm:py-24 flex flex-col items-center">
         <header className="w-full max-w-screen-md px-8 flex flex-col items-start">
           <Image
-            className="w-40 sm:w-48 aspect-square rounded object-center object-cover mt-20"
+            className="w-40 aspect-square rounded-full object-center object-cover mt-20"
             src={PROFILE_PHOTO}
             height={300}
             width={300}
