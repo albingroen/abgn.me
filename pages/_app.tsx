@@ -22,7 +22,7 @@ const LINKS = [
     href: "/blog",
   },
   {
-    label: "Photos",
+    label: "Gallery",
     href: "/photos",
   },
 ];

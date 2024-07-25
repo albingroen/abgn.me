@@ -9,7 +9,7 @@ interface SeoProps {
 }
 
 const Seo = ({
-  description = "Using code and design to craft beautiful & accessible digital solutions. I currently lead frontend development at Demando.",
+  description = "I use code and design to craft beautiful & accessible digital products.",
   image = "https://res.cloudinary.com/albin-groen/image/upload/f_auto,q_auto/v1676387662/office_dwkd8z.jpg",
   title = "Hej, I'm Albin",
   url = "https://abgn.me",

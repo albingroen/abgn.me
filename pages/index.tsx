@@ -83,9 +83,28 @@ const links = [
     ),
   },
   {
-    label: "Dribbble",
-    href: "https://dribbble.com/albingroen",
-    className: "text-[#D25A85]",
+    label: "Mastodon",
+    href: "https://mastodon.social/@abgn",
+    className: "text-[#858AFA]",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={0.5}
+        className="w-10 h-10 sm:w-12 sm:h-12"
+      >
+        <path d="M16 17.24c2.5-.3 4.69-1.84 5-3.25a33.59 33.59 0 0 0 .4-5.42C21.33 4.23 18.48 3 18.48 3A17.64 17.64 0 0 0 12 2a17.64 17.64 0 0 0-6.48 1S2.68 4.23 2.68 8.57v3.44c.1 4.24.78 8.42 4.7 9.46A14.73 14.73 0 0 0 12 22a9.21 9.21 0 0 0 3.54-.81l-.07-1.64A11.41 11.41 0 0 1 12 20c-1.8-.06-3.71-.19-4-2.4a4.26 4.26 0 0 1 0-.63 22.68 22.68 0 0 0 4 .54 23.6 23.6 0 0 0 4-.27zm-6.54-9.8q-1.35 0-1.35 1.62v5.1H6V8.9a3.78 3.78 0 0 1 .82-2.56 2.85 2.85 0 0 1 2.23-1 2.68 2.68 0 0 1 2.4 1.23l.52.87.52-.87a2.68 2.68 0 0 1 2.4-1.23 2.85 2.85 0 0 1 2.23 1A3.78 3.78 0 0 1 18 8.9v5.26h-2.11v-5.1q0-1.62-1.35-1.62c-1 0-1.51.64-1.51 1.92v2.79H11V9.36c0-1.28-.54-1.92-1.54-1.92z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Twitch",
+    href: "https://twitch.tv/groenalbin",
+    className: "text-[#6441A5]",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -97,8 +116,7 @@ const links = [
         strokeWidth={0.75}
         className="w-10 h-10 sm:w-12 sm:h-12"
       >
-        <circle cx="12" cy="12" r="10"></circle>
-        <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+        <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7" />
       </svg>
     ),
   },
@@ -122,22 +140,42 @@ const links = [
       </svg>
     ),
   },
+  {
+    label: "Dribbble",
+    href: "https://dribbble.com/albingroen",
+    className: "text-[#D25A85]",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={0.75}
+        className="w-10 h-10 sm:w-12 sm:h-12"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+      </svg>
+    ),
+  },
 ];
 
 const workHistory = [
   {
     heading: "Boulder · TV4",
     startYear: "Apr 2024",
-    endYear: "Current",
+    endYear: "Aug 2024",
     website: "https://tv4play.se",
-    lede: "Through a really fun constultancy group, I currently get to work as a senior frontend engineer at Sweden's channel 4 (TV4). Here I get to help build their streaming service, TV4 play, which has millions of users. This requires a great focus on scale, stability and quality.",
+    lede: "Through a really fun constultancy group, I got to work as a senior frontend engineer at Sweden's channel 4 (TV4). Here I got to help build their streaming service, TV4 play, which has millions of users. This required a great focus on scale, stability and quality.",
   },
   {
     heading: "Demando",
     startYear: "Aug 2021",
     endYear: "Apr 2024",
     website: "https://demando.io",
-    lede: "Working as a Lead Frontend Developer on a web recruiting platform built using React.js and Typescript for the frontend, and Node.js, Typescript, GraphQL, and PostgresQL for the backend. Getting familiar with GCP (Google Cloud Platform.) and having the opportunity to influence a lot on design and architecture.",
+    lede: "Worked as a Lead Frontend Developer on a web recruiting platform built using React.js and Typescript for the frontend, and Node.js, Typescript, GraphQL, and PostgresQL for the backend. Got familiar with GCP (Google Cloud Platform.) and had the opportunity to influence a lot on design and architecture.",
   },
   {
     heading: "Dooer",
@@ -274,9 +312,9 @@ export default function Home() {
             </p>
           </div>
 
-          <p className="mt-10 sm:mt-[52px] text-2xl sm:text-3xl font-light leading-normal sm:leading-normal selection-light">
-            Using code and design to craft beautiful & accessible products. I
-            currently lead front-end development at Demando.
+          <p className="mt-10 sm:mt-[52px] text-2xl sm:text-3xl font-light text-balance leading-normal sm:leading-normal selection-light">
+            I use code and design to craft beautiful & accessible digital
+            products.
           </p>
 
           <Image
@@ -302,7 +340,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-tr from-neutral-50 via-neutral-50 to-neutral-100 dark:from-black/60 dark:via-black/60 dark:to-black/60 py-24 sm:py-28 w-full flex justify-center">
+        <section className="hidden bg-gradient-to-tr from-neutral-50 via-neutral-50 to-neutral-100 dark:from-black/60 dark:via-black/60 dark:to-black/60 py-24 sm:py-28 w-full md:flex justify-center">
           <div className="w-full max-w-screen-md flex flex-col px-8">
             <h2 className="text-4xl sm:text-5xl font-light selection-light leading-tight">
               Design exploration
