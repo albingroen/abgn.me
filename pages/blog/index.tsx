@@ -76,7 +76,7 @@ function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
                       className="flex flex-col md:flex-row md:items-center group justify-between gap-6 md:gap-8 py-10"
                     >
                       <div className={post.image ? "w-72" : undefined}>
-                        <h3 className="link-child dark:!text-white dark:!font-normal text-2xl mt-4 leading-relaxed">
+                        <h3 className="link-child dark:!text-white dark:!font-normal text-2xl mt-4 leading-relaxed text-balance">
                           {post.title}
                         </h3>
                         <p className="mt-2 text-neutral-500">{post.date}</p>

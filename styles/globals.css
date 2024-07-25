@@ -20,11 +20,11 @@
   }
 
   .link {
-    @apply hover:underline font-medium text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition underline-offset-2;
+    @apply hover:underline font-medium text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition underline-offset-4 decoration-1;
   }
 
   .link-child {
-    @apply group-hover:underline font-medium text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition underline-offset-2;
+    @apply group-hover:underline font-medium text-neutral-600 dark:text-neutral-400 dark:hover:text-white transition underline-offset-4 decoration-1;
   }
 
   .selection-light {
