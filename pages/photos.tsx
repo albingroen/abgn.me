@@ -15,9 +15,13 @@ function Photos({ images }: { images: string[] }) {
 
       <div className="max-w-screen-md mx-auto py-24 px-8">
         <header>
-          <h1 className="text-2xl font-semibold mt-8">Photos</h1>
+          <h1 className="text-6xl sm:text-7xl font-light selection-light relative leading-tight">
+            Photos
+          </h1>
 
-          <p className="mt-4">A bunch of photos taken throughout the years</p>
+          <p className="mt-5 text-lg leading-relaxed">
+            A bunch of photos taken throughout the years
+          </p>
         </header>
 
         <section className="mt-12">

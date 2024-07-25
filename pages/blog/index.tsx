@@ -10,9 +10,10 @@ import {
 import { PROFILE_PHOTO, SITE_URL } from "../../lib/constants";
 import { getSortedPosts } from "../../lib/posts";
 import { useState } from "react";
+import Image from "next/image";
 
-const TITLE = "Albins' blog";
-const DESCRIPTION = "Some of my writing on technology, design and business";
+const TITLE = "Blog";
+const DESCRIPTION = "Sometimes I like to write about things";
 
 export const getStaticProps: GetStaticProps<{
   posts: BlogPostFrontMatter[];
@@ -38,19 +39,11 @@ function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
 
       <div className="max-w-screen-md mx-auto py-24 px-6 md:px-8">
         <header>
-          <img
-            className="w-20 h-20 rounded-full object-center object-cover mt-20"
-            src={PROFILE_PHOTO}
-            alt=""
-          />
+          <h1 className="text-6xl sm:text-7xl font-light selection-light relative leading-tight">
+            {TITLE}
+          </h1>
 
-          <Link href="/" className="mt-6 inline-flex items-center gap-2 link">
-            <ArrowLeftIcon className="w-4" /> <span>Back</span>
-          </Link>
-
-          <h1 className="text-3xl font-semibold mt-5">{TITLE}</h1>
-
-          <p className="mt-3.5 leading-relaxed">{DESCRIPTION}</p>
+          <p className="mt-5 text-lg leading-relaxed">{DESCRIPTION}</p>
 
           <div className="relative mt-6">
             <MagnifyingGlassIcon className="absolute w-[18px] text-neutral-400 dark:text-neutral-500 left-0 top-1/2 transform -translate-y-1/2" />

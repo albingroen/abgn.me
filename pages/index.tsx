@@ -238,7 +238,7 @@ export default function Home() {
       <div className="pb-32 sm:py-24 flex flex-col items-center">
         <header className="w-full max-w-screen-md px-8 flex flex-col items-start">
           <Image
-            className="w-40 aspect-square rounded-full object-center object-cover mt-20"
+            className="w-40 aspect-square rounded-full object-center object-cover"
             src={PROFILE_PHOTO}
             height={300}
             width={300}
