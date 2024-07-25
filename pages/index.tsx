@@ -318,11 +318,19 @@ export default function Home() {
           </p>
 
           <Image
-            className="aspect-vieo mt-16 rounded object-center object-cover transition filter grayscale"
+            className="aspect-vieo mt-16 rounded object-center object-cover dark:hidden"
             alt="Map of the great Stockholm region"
-            src="/map.png"
-            width={1920}
-            height={1080}
+            src="/map-light.png"
+            width={2048}
+            height={1152}
+          />
+
+          <Image
+            className="aspect-vieo mt-16 rounded object-center object-cover hidden dark:block"
+            alt="Map of the great Stockholm region"
+            src="/map-dark.png"
+            width={2048}
+            height={1152}
           />
         </header>
 
