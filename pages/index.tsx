@@ -164,6 +164,13 @@ const links = [
 
 const workHistory = [
   {
+    heading: "Pixelrymd",
+    startYear: "Jul 2024",
+    endYear: "Current",
+    website: "https://linkedin.com/company/pixelrymd",
+    lede: "",
+  },
+  {
     heading: "Boulder · TV4",
     startYear: "Apr 2024",
     endYear: "Aug 2024",
