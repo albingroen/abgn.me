@@ -12,7 +12,7 @@ interface ArticleProps {
 
 export default function Article({ frontMatter, source }: ArticleProps) {
   return (
-    <article className="mt-8 flex flex-col prose prose-neutral dark:prose-invert prose-headings:font-normal prose-lg prose-img:rounded-lg max-w-none prose-a:decoration-1 prose-a:underline-offset-4">
+    <article className="mt-8 flex flex-col prose prose-neutral dark:prose-invert prose-headings:font-normal prose-lg prose-img:rounded-lg max-w-none prose-a:decoration-1 prose-a:text-indigo-600 prose-a:decoration-dashed prose-a:underline-offset-4">
       <h1 className="text-5xl !font-light leading-normal !mb-0 !mt-0 text-balance">
         {frontMatter.title}
       </h1>
@@ -36,7 +36,14 @@ export default function Article({ frontMatter, source }: ArticleProps) {
         )}
       </div>
 
-      <MDXRemote {...source} />
+      <MDXRemote
+        {...source}
+        components={{
+          a: (props) => (
+            <a {...props} rel="noopener noreferrer" target="_blank" />
+          ),
+        }}
+      />
     </article>
   );
 }
