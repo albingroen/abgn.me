@@ -17,10 +17,10 @@ export default function Nav() {
       href: "/nu",
       label: "Nu",
     },
-    {
-      href: "/kurs",
-      label: "Kurs",
-    },
+    //{
+    //  href: "/kurs",
+    //  label: "Kurs",
+    //},
     {
       href: "/kontakt",
       label: "Kontakt",
@@ -49,7 +49,7 @@ export default function Nav() {
                 "rounded-md py-2 px-3 transition flex items-center gap-2",
                 pathname === page.href
                   ? "text-black font-medium"
-                  : "text-gray-500 hover:text-gray-800"
+                  : "text-gray-500 hover:text-gray-800",
               )}
               href={page.href}
             >
