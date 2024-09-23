@@ -24,8 +24,8 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="bg-white sticky top-0 px-6 py-2.5 border-b border-gray-50 shadow-sm">
-      <div className="max-w-screen-sm mx-auto flex items-center justify-between">
+    <nav className="bg-gray-900 text-white sticky top-0 px-6 py-2.5 border-b border-gray-800 shadow-sm">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between">
         <Link
           href="/"
           className="text-xl flex items-center gap-2 font-semibold hover:text-gray-500 transition tracking-tight leading-none"

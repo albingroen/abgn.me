@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <footer className="px-6 pb-12">
-      <div className="max-w-screen-sm mx-auto flex flex-col gap-10">
+      <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
         <hr />
 
         <div className="flex items-center gap-4">

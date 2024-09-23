@@ -23,16 +23,13 @@ export default async function Page(props: { params: { slug: string } }) {
   });
 
   return (
-    <article>
+    <article className="max-w-screen-xl max-w-screen-none prose-sm sm:prose prose-neutral prose-a:underline-offset-2 prose-a:decoration-1 prose-a:text-blue-600 mx-auto text-balance prose-headings:font-sans prose-headings:font-semobold prose-h1:font-medium prose-h2:font-medium prose-headings:tracking-tight">
       <Link
         className="inline-flex items-center gap-1.5 font-sans"
         href="/blogg"
       >
         <ArrowLeftIcon size={16} /> <span>Alla blogginlägg</span>
       </Link>
-
-      <br />
-      <br />
 
       <h1>{data.title}</h1>
 
@@ -41,8 +38,6 @@ export default async function Page(props: { params: { slug: string } }) {
       </p>
 
       <Article source={mdxSource} />
-
-      <br />
 
       <Link
         className="inline-flex items-center gap-1.5 font-sans"
