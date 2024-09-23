@@ -18,12 +18,12 @@ export default function Home() {
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-2 mb-6">
           <MapPinIcon size={20} className="stroke-gray-400" />{" "}
-          <h3 className="m-0 font-medium">Västerås</h3>
+          <h3 className="!m-0 font-medium">Västerås</h3>
         </div>
 
         <div className="flex items-center gap-2 mb-6">
           <CalendarIcon size={20} className="stroke-gray-400" />{" "}
-          <h3 className="m-0 font-medium">Oktober 2024</h3>
+          <h3 className="!m-0 font-medium">Oktober 2024</h3>
         </div>
       </div>
 

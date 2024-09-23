@@ -36,7 +36,7 @@ export default async function Page(props: { params: { slug: string } }) {
 
       <h1>{data.title}</h1>
 
-      <p className="m-0 text-gray-400 font-sans">
+      <p className="!m-0 text-gray-400 font-sans">
         {format(data.date, "d MMMM yyyy", { locale: sv })}
       </p>
 

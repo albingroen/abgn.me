@@ -54,7 +54,7 @@ export default function Page() {
 
               <Link
                 href={`/blogg/${post.slug}`}
-                className="no-underline flex flex-col sm:flex-row m-0 gap-7"
+                className="!no-underline flex flex-col sm:flex-row m-0 gap-7"
               >
                 {post.image && (
                   <Image
@@ -62,15 +62,15 @@ export default function Page() {
                     width={1280}
                     height={720}
                     src={post.image}
-                    className="bg-gray-100 m-0 sm:w-64 object-contain object-center"
+                    className="bg-gray-100 !m-0 sm:w-64 object-contain object-center"
                   />
                 )}
 
                 <div className="flex flex-col justify-center gap-3 flex-1">
-                  <h2 className="m-0">{post.title}</h2>
-                  <p className="m-0 text-gray-600">{post.excerpt}</p>
+                  <h2 className="!m-0">{post.title}</h2>
+                  <p className="!m-0 text-gray-600">{post.excerpt}</p>
 
-                  <p className="m-0 text-gray-400 font-sans">
+                  <p className="!m-0 text-gray-400 font-sans">
                     {format(post.date, "d MMMM yyyy", { locale: sv })}
                   </p>
                 </div>

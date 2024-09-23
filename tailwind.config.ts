@@ -15,7 +15,6 @@ const config: Config = {
         gray: colors.neutral,
       },
       fontFamily: {
-        serif: ["var(--font-noto-serif)"],
         sans: ["var(--font-inter)"],
       },
     },
