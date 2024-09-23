@@ -43,7 +43,7 @@ export default function RootLayout({
         <Nav />
 
         <main className="px-6 py-14 flex-1">
-          <div className="max-w-screen-sm max-w-screen-none prose prose-neutral prose-a:underline-offset-2 prose-a:decoration-1 prose-a:text-blue-600 mx-auto text-balance font-serif prose-headings:font-sans prose-headings:font-semobold prose-h1:font-medium prose-h2:font-medium prose-headings:tracking-tight">
+          <div className="max-w-screen-sm max-w-screen-none prose-sm sm:prose prose-neutral prose-a:underline-offset-2 prose-a:decoration-1 prose-a:text-blue-600 mx-auto text-balance font-serif prose-headings:font-sans prose-headings:font-semobold prose-h1:font-medium prose-h2:font-medium prose-headings:tracking-tight">
             {children}
           </div>
         </main>

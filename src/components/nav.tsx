@@ -34,7 +34,8 @@ export default function Nav() {
             size={20}
             className="fill-orange-500 stroke-orange-500"
           />
-          <span>Albin Groen</span>
+          <span className="hidden sm:inline">Albin Groen</span>
+          <span className="sm:hidden">AWG</span>
         </Link>
 
         <div className="flex items-center gap-1.5">

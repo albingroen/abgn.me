@@ -49,10 +49,10 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
           <div className="flex items-center gap-2.5 text-gray-400">
             <EditIcon size={16} />
-            <p>Uppdaterad 2024-09-16</p>
+            <p className="text-sm sm:text-base">Uppdaterad 2024-09-16</p>
           </div>
 
           <span className="text-gray-400">·</span>
@@ -63,7 +63,7 @@ export default function Footer() {
             className="flex items-center gap-2 text-gray-500 hover:text-inherit transition"
           >
             <GitBranchPlusIcon size={16} />
-            <p>Föreslå en ändring</p>
+            <p className="text-sm sm:text-base">Föreslå en ändring</p>
           </a>
         </div>
       </div>

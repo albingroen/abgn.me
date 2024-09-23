@@ -54,7 +54,7 @@ export default function Page() {
 
               <Link
                 href={`/blogg/${post.slug}`}
-                className="no-underline flex m-0 gap-7"
+                className="no-underline flex flex-col sm:flex-row m-0 gap-7"
               >
                 {post.image && (
                   <Image
@@ -62,7 +62,7 @@ export default function Page() {
                     width={1280}
                     height={720}
                     src={post.image}
-                    className="bg-gray-100 m-0 w-64 object-contain object-center"
+                    className="bg-gray-100 m-0 sm:w-64 object-contain object-center"
                   />
                 )}
 
