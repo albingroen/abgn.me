@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <>
+    <div className="article">
       <h1>Kontakta mig</h1>
 
       <p>
@@ -22,6 +22,6 @@ export default function Page() {
       <h2>Telefon</h2>
 
       <a href="mailto:+46720173749">+46 720 17 37 49</a>
-    </>
+    </div>
   );
 }

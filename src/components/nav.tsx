@@ -1,7 +1,18 @@
 "use client";
 
 import classNames from "@/lib/classNames";
-import { MountainIcon } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+import {
+  GlobeIcon,
+  LayoutPanelLeft,
+  MountainIcon,
+  RssIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,8 +35,8 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="bg-gray-900 text-white sticky top-0 px-6 py-2.5 border-b border-gray-800 shadow-sm">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between">
+    <nav className="bg-card z-10 text-white sticky top-0 px-6 py-2.5 border-b border-b-background shadow-sm">
+      <div className="max-w-screen-lg mx-auto flex items-center justify-between">
         <Link
           href="/"
           className="text-xl flex items-center gap-2 font-semibold hover:text-gray-500 transition tracking-tight leading-none"
@@ -45,14 +56,35 @@ export default function Nav() {
               className={classNames(
                 "rounded-md py-2 px-3 transition flex items-center gap-2",
                 pathname === page.href
-                  ? "text-black font-medium"
-                  : "text-gray-500 hover:text-gray-800",
+                  ? "text-white font-medium"
+                  : "text-muted-foreground hover:text-foreground",
               )}
               href={page.href}
             >
               {page.label}
             </Link>
           ))}
+
+          <div className="flex items-center gap-0">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="px-3">
+                <GlobeIcon size={18} strokeWidth={1} />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>Svenska</DropdownMenuItem>
+                <DropdownMenuItem>English</DropdownMenuItem>
+                <DropdownMenuItem>日本語</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link href="/sitemap.xml" className="px-3">
+              <LayoutPanelLeft size={18} strokeWidth={1} />
+            </Link>
+
+            <Link href="/rss" className="pl-3">
+              <RssIcon size={18} strokeWidth={1} />
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

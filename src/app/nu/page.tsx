@@ -2,10 +2,16 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <>
+    <div className="article">
       <h1>Vad gör jag nu?</h1>
 
-      <Image width={1064} height={600} src="/allears.webp" alt="All Ears" />
+      <Image
+        width={1064}
+        height={600}
+        src="/allears.webp"
+        alt="All Ears"
+        className="rounded"
+      />
 
       <p>
         Under våren 2024 började det tyvärr se mörkt ut för{" "}
@@ -33,6 +39,6 @@ export default function Page() {
         </a>
         . Där har jag varit sedan Augusti 2024.
       </p>
-    </>
+    </div>
   );
 }

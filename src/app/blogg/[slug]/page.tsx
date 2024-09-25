@@ -7,6 +7,7 @@ import Article from "@/components/article";
 import { ArrowLeftIcon } from "lucide-react";
 import { format } from "date-fns";
 import { sv } from "date-fns/locale/sv";
+import Image from "next/image";
 
 const postDirectory = path.join(process.cwd(), "posts");
 
@@ -23,7 +24,7 @@ export default async function Page(props: { params: { slug: string } }) {
   });
 
   return (
-    <article className="max-w-screen-xl max-w-screen-none prose-sm sm:prose prose-neutral prose-a:underline-offset-2 prose-a:decoration-1 prose-a:text-blue-600 mx-auto text-balance prose-headings:font-sans prose-headings:font-semobold prose-h1:font-medium prose-h2:font-medium prose-headings:tracking-tight">
+    <article className="max-w-screen-md max-w-screen-none article">
       <Link
         className="inline-flex items-center gap-1.5 font-sans"
         href="/blogg"
@@ -31,9 +32,17 @@ export default async function Page(props: { params: { slug: string } }) {
         <ArrowLeftIcon size={16} /> <span>Alla blogginlägg</span>
       </Link>
 
-      <h1>{data.title}</h1>
+      <Image
+        alt=""
+        width={1920}
+        height={1080}
+        src={data.image}
+        className="rounded"
+      />
 
-      <p className="!m-0 text-gray-400 font-sans">
+      <h1 className="!mt-12 !leading-tight">{data.title}</h1>
+
+      <p className="text-muted-foreground-darker !text-xl font-sans">
         {format(data.date, "d MMMM yyyy", { locale: sv })}
       </p>
 

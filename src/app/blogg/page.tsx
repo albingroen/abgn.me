@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { readingTime } from "@/lib/utils";
 import { format } from "date-fns";
 import { sv } from "date-fns/locale/sv";
 import fs from "fs";
@@ -6,7 +7,6 @@ import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
 import path from "path";
-import { Fragment } from "react";
 
 const postDirectory = path.join(process.cwd(), "posts");
 
@@ -31,30 +31,28 @@ export default function Page() {
 
     return {
       slug,
+      readingTime: readingTime(fileContents),
       ...frontmatter,
     };
   });
 
   return (
-    <>
-      <h1>Blogg</h1>
-
-      {allPostsData
-        .sort((a, b) => {
-          if (new Date(a.date) < new Date(b.date)) {
-            return 1;
-          } else {
-            return -1;
-          }
-        })
-        .map((post) => {
-          return (
-            <Fragment key={post.slug}>
-              <hr />
-
+    <div className="flex gap-10 items-start">
+      <ul className="flex flex-col gap-12 flex-1">
+        {allPostsData
+          .sort((a, b) => {
+            if (new Date(a.date) < new Date(b.date)) {
+              return 1;
+            } else {
+              return -1;
+            }
+          })
+          .map((post) => {
+            return (
               <Link
+                key={post.slug}
                 href={`/blogg/${post.slug}`}
-                className="!no-underline flex flex-col sm:flex-row m-0 gap-7"
+                className="flex flex-col bg-card rounded shadow-lg overflow-hidden border"
               >
                 {post.image && (
                   <Image
@@ -62,22 +60,44 @@ export default function Page() {
                     width={1280}
                     height={720}
                     src={post.image}
-                    className="bg-gray-100 !m-0 sm:w-64 object-contain object-center"
+                    className="aspect-video object-cover object-center"
                   />
                 )}
 
-                <div className="flex flex-col justify-center gap-3 flex-1">
-                  <h2 className="!m-0">{post.title}</h2>
-                  <p className="!m-0 text-gray-600">{post.excerpt}</p>
+                <div className="space-y-3 p-5">
+                  <div className="space-y-4">
+                    <h2 className="text-3xl font-medium tracking-tight text-balance leading-normal">
+                      {post.title}
+                    </h2>
 
-                  <p className="!m-0 text-gray-400 font-sans">
-                    {format(post.date, "d MMMM yyyy", { locale: sv })}
+                    <p className="text-muted-foreground text-balance leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                  </div>
+
+                  <p className="text-muted-foreground-darker">
+                    <span>
+                      {format(post.date, "d MMMM yyyy", { locale: sv })}
+                    </span>
+                    &nbsp; &nbsp;
+                    <span>·</span>
+                    &nbsp; &nbsp;
+                    <span>{post.readingTime.toFixed(0)} minuter lästid</span>
                   </p>
                 </div>
               </Link>
-            </Fragment>
-          );
-        })}
-    </>
+            );
+          })}
+      </ul>
+
+      <div className="flex-1 max-w-xs sticky top-[88px]">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, culpa
+          illum. Excepturi hic libero laboriosam, veniam aliquam ullam illo
+          facere quod voluptate quaerat? Veniam obcaecati recusandae vel
+          repellendus praesentium? Ipsa.
+        </p>
+      </div>
+    </div>
   );
 }

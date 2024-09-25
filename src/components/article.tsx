@@ -23,6 +23,7 @@ export default function Article(props: {
             width={1280}
             height={720}
             src={props.src!}
+            className="rounded"
           />
         ),
       }}

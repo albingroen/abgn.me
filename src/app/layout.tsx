@@ -4,6 +4,14 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,14 +32,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen flex flex-col">
+      <body className={`min-h-screen flex flex-col dark`}>
         <Nav />
 
-        <main className="px-6 py-14 flex-1">
-          <div className="max-w-screen-xl mx-auto">{children}</div>
-        </main>
+        <div className="flex flex-col gap-5">
+          <div className="px-6 border-b bg-card">
+            <Breadcrumb className="max-w-screen-lg mx-auto py-3">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/blogg">Blogg</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
 
-        <Footer />
+          <main className="px-6 flex-1 py-10">
+            <div className="max-w-screen-lg mx-auto">{children}</div>
+          </main>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );
