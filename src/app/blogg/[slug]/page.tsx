@@ -10,9 +10,11 @@ import { sv } from "date-fns/locale/sv";
 
 const postDirectory = path.join(process.cwd(), "posts");
 
-export default async function Page(props: { params: { slug: string } }) {
+export default async function Page(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const fileContents = fs.readFileSync(
-    postDirectory + `/${props.params.slug}.mdx`,
+    postDirectory + `/${(await props.params).slug}.mdx`,
     "utf8",
   );
 
