@@ -1,18 +1,23 @@
 import { ArrowRightIcon } from "lucide-react";
-import VdkLogo from "./vdk-logo.png";
-import DitherLG from "./dither-lg.png";
+import Image from "next/image";
 
-export function Welcome() {
+export default function Page() {
   return (
     <main className="w-full max-w-screen-md mx-auto px-6 py-20 space-y-20 text-balance">
       <section className="space-y-5">
         <div className="space-y-9">
-          <img className="w-16 h-16" src={DitherLG} alt="" />
+          <Image
+            width={64}
+            height={64}
+            className="w-16 h-16"
+            src="/dither.png"
+            alt=""
+          />
           <h1 className="font-bold tracking-tight text-4xl">Hej!</h1>
         </div>
         <div className="space-y-2">
           <p>My name is Albin Groen.</p>
-          <p>I'm a self-taught designer turned developer.</p>
+          <p>I&apos;m a self-taught designer turned developer.</p>
         </div>
       </section>
 
@@ -47,12 +52,12 @@ export function Welcome() {
         <div className="space-y-8">
           <div className="space-y-4">
             <p className="leading-relaxed">
-              I've always been big on side-projects. It's a way for me to get my
-              creative energy fulfilled outisde of my dayjob.
+              I&apos;ve always been big on side-projects. It&apos;s a way for me
+              to get my creative energy fulfilled outside of my day job.
             </p>
             <p className="leading-relaxed">
-              Here is a small number of projects I've recently worked on or am
-              currently working on. You'll find more on{" "}
+              Here is a small number of projects I&apos;ve recently worked on or
+              am currently working on. You&apos;ll find more on{" "}
               <a href="https://github.com/albingroen">GitHub</a>
             </p>
           </div>
@@ -69,7 +74,7 @@ export function Welcome() {
                 </p>
                 <p className="leading-relaxed max-w-sm text-gray-400">
                   A graphical web interface for building Prisma database schemas
-                  in a easier way.
+                  in an easier way.
                 </p>
               </a>
             </li>
@@ -103,7 +108,7 @@ export function Welcome() {
             </li>
           </ul>
 
-          <hr className="border-gray-900" />
+          <hr className="border-gray-800" />
 
           <div className="space-y-4">
             <a
@@ -111,12 +116,18 @@ export function Welcome() {
               href="https://www.meetup.com/vasteras-datorklubb/?eventOrigin=event_home_page"
               className="flex gap-3.5 p-3 w-fit border border-gray-800 items-center hover:bg-gray-900 transition rounded-md"
             >
-              <img className="w-20 h-20 rounded" src={VdkLogo} alt="" />
+              <Image
+                width={80}
+                height={80}
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded"
+                src="/vdk-logo.png"
+                alt=""
+              />
               <div className="space-y-1 flex-1">
-                <h3 className="font-medium text-lg tracking-tight">
+                <h3 className="font-medium sm:text-lg tracking-tight">
                   Västerås Datorklubb
                 </h3>
-                <p className="max-w-xs text-gray-500 dark:text-gray-400">
+                <p className="max-w-xs text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                   For people interested in anything between hardware and
                   software.
                 </p>
@@ -149,18 +160,18 @@ export function Welcome() {
             How can I reach you?
           </h2>
           <p className="leading-relaxed">
-            I'm always open to a chat. Do you need advice in your career? Do you
-            have advice for me? Please feel free to reach out. It'd only make me
-            happy.
+            I&apos;m always open to a chat. Do you need advice in your career?
+            Do you have advice for me? Please feel free to reach out. It&apos;d
+            only make me happy.
           </p>
         </div>
 
         <p className="leading-relaxed">
-          Here's my{" "}
+          Here&apos;s my{" "}
           <a className="link" href="mailto:albingroen@proton.me">
             email address
           </a>{" "}
-          and here's my{" "}
+          and here&apos;s my{" "}
           <a
             className="link"
             href="https://www.linkedin.com/in/albin-groen-689bbb305/"
@@ -175,9 +186,9 @@ export function Welcome() {
         <div className="space-y-6">
           <h2 className="text-2xl font-semibold tracking-tight">Socials</h2>
           <p>
-            Yes, I'm on social media. Posting isn't really my speciality, but I
-            love to keep up with what's going on in the world around me. So,
-            yes, you'll find me over there.
+            Yes, I&apos;m on social media. Posting isn&apos;t really my
+            speciality, but I love to keep up with what&apos;s going on in the
+            world around me. So, yes, you&apos;ll find me over there.
           </p>
         </div>
 
