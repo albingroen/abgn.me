@@ -1,24 +1,27 @@
 import type { Config } from "tailwindcss";
-import typography from "@tailwindcss/typography";
-import forms from "@tailwindcss/forms";
 import colors from "tailwindcss/colors";
+import typography from "@tailwindcss/typography";
 
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+export default {
+  content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          '"Inter"',
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
       colors: {
         gray: colors.neutral,
       },
-      fontFamily: {
-        sans: ["var(--font-inter)"],
-      },
     },
   },
-  plugins: [typography, forms],
-};
-export default config;
+  plugins: [typography],
+} satisfies Config;
