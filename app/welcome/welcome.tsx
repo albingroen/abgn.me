@@ -229,7 +229,8 @@ export function Welcome() {
       </section>
 
       <footer>
-        Copyright © {new Date().getFullYear()} Albin Groen. All rights reserved.
+        Copyright © {new Date().getFullYear()} Albin Groen. All rights
+        reserved.
       </footer>
     </main>
   );
