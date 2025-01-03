@@ -1,0 +1,96 @@
+---
+title: "VScode & iTerm2 Automatic Theme Switching"
+date: "2021-05-04"
+author: "Albin Groen"
+excerpt: "How you can get automatic light/dark mode switching in VSCode and iTerm2 on MacOS"
+tags: ["Dark mode", "VSCode", "iTerm2"]
+image: https://res.cloudinary.com/albin-groen/image/upload/v1620113908/CleanShot_2021-05-04_at_09.35.44_iaoang.png
+---
+
+## 1. Automator Application (optional)
+
+To start off, we'll create a MacOS Automator application that we can run from our spotlight, or something like Alfred, to be able to quickly change between light mode and dark mode in MacOS, manual, whenever we feel like it. To do this, start by opening the Automator application. Make sure you're also on somewhat of a new update of MacOS, to ensure that this is going to work.
+
+![Automaor init window](https://res.cloudinary.com/albin-groen/image/upload/v1620113908/CleanShot_2021-05-04_at_09.35.44_iaoang.png)
+
+Select Application, and click the blue button.
+
+### The script
+
+Now, we're going to choose an AppleScript block from the left-hand side menu. Simply search for AppleScript in the search-bar, and drag it into the canvas. Once it's in there, just add this piece of code, name it something reasonable, like **Toggle dark mode**, and save it somewhere you can find it later.
+
+```applescript
+on run {input, parameters}
+
+	tell application "System Events"
+		tell appearance preferences
+			set dark mode to not dark mode
+		end tell
+	end tell
+
+	return input
+end run
+```
+
+![Automator script](https://res.cloudinary.com/albin-groen/image/upload/v1620113977/CleanShot_2021-05-04_at_09.39.29_rzlthg.png)
+
+Now, if you open your spotlight, or some other application launcher tool, you should be able to search for the newly created application, and once you run it, see a warning window show up, asking you whether you want to allow this application to run or not. Hitting yes in the popup should make the system toggle its theme setting.
+
+## 2. iTerm2 theme switching
+
+iTerm2 doesn't have any built-in feature for switching themes depending on the system theme setting, so to make this happen, we need to create a custom script for this. Here's how we'll do it:
+
+- 1. Open up iTerm2
+- 2. Click **Scripts > Manage > New Python Script** in the MacOS menu bar
+- 3. Choose **Basic** as the script type
+- 4. Choose **Long-Running Daemon** as the script interval
+
+Now, name the file however you want, but preferably something relevant, like **auto_dark_mode.py**. After this, locate the file and open it inside of something like VScode, Vim, or Sublime, and paste the following content.
+
+```python
+#!/usr/bin/env python3
+
+import asyncio
+import iterm2
+
+async def main(connection):
+    async with iterm2.VariableMonitor(connection, iterm2.VariableScopes.APP, "effectiveTheme", None) as mon:
+        while True:
+            # Block until theme changes
+            theme = await mon.async_get()
+
+            # Themes have space-delimited attributes, one of which will be light or dark.
+            parts = theme.split(" ")
+            if "dark" in parts:
+                preset = await iterm2.ColorPreset.async_get(connection, "Smoooooth")
+            else:
+                preset = await iterm2.ColorPreset.async_get(connection, "Light Background")
+
+            # Update the list of all profiles and iterate over them.
+            profiles=await iterm2.PartialProfile.async_query(connection)
+            for partial in profiles:
+                # Fetch the full profile and then set the color preset in it.
+                profile = await partial.async_get_full_profile()
+                await profile.async_set_color_preset(preset)
+
+iterm2.run_forever(main)
+```
+
+![Python script in VSCode](https://res.cloudinary.com/albin-groen/image/upload/v1620114598/CleanShot_2021-05-04_at_09.48.50_fey68c.png)
+
+- 5. Click **Scripts > auto_dark_mode.py** to finally run the script. This will ask for permission and then run.
+
+## 3. VSCode theme switching
+
+The VSCode theme switching part is quite a lot easier. It also doesn't have any built-in way of doing this, but there's a lot of extensions on the marketplace that can help us with this.
+
+- 1. Open VSCode
+- 2. Install the [Auto Dark Mode](https://marketplace.visualstudio.com/items?itemName=LinusU.auto-dark-mode) extension by LinusU
+- 3. Open the settings and search for **Auto dark mode**
+- 4. Here you can customize which theme should be used in which theme mode
+
+![VScode auto dark mode settings](https://res.cloudinary.com/albin-groen/image/upload/v1620115150/CleanShot_2021-05-04_at_09.58.51_nslv8g.png)
+
+## Summary
+
+Now, you should be able to run the **Toggle dark mode** Automator application and see VSCode, as well as iTerm2 change themes accordingly! Thanks for reading. Consider following me on Twitter [@albingroen](https://twitter.com/albingroen) if you want more content like this.

@@ -1,0 +1,38 @@
+---
+title: "I Built a Command-K React.js Component"
+date: "2021-11-11"
+author: "Albin Groen"
+excerpt: "I built a fast, accessible, and pretty React.js command palette component"
+tags: ["React", "TailwindCSS"]
+image: "https://res.cloudinary.com/albin-groen/image/upload/v1636617304/cmdk_maozmc.png"
+---
+
+![Command palette](https://res.cloudinary.com/albin-groen/image/upload/v1636617304/cmdk_maozmc.png)
+
+[Finished component](https://www.npmjs.com/package/react-cmdk)
+
+So I decided I wanted to have Command-K menu in my web application. I wanted it
+to be fast, accessible, and good looking. Since my application was built in
+React.js, it was a fairly easy choice to build the component using the same
+tech. I set up a project and started to build. Because I wanted it to be as
+accessible as possible, I chose to make the foundation of the component rely on
+[Radix-UI](https://www.radix-ui.com). Radix-UI has a bunch of accessible and
+unstyled primitive components that you can use for free, and build on top of.
+This component uses the Dialog primitive. This makes the menu dismissable by
+either hitting "Escape" or clicking outside of the menu.
+
+I also made sure it would be possible to tab through the results in the menu,
+and that the container would scroll. Instead of keeping a locale state that
+keeps track of which item is currently selected, or hovered, I decided to go
+with the native tab-index functionality. This means you can just hit the "Tab"
+key on your keyboard once you've entered a search-query you're happy with, and
+then you can browse through the results. So what happens you hover an item?
+This actually hijacks the hover event and runs `focus()` method on the `<a>`
+element, which causes the background to change, and, if the option is slightly
+below the fold, the container will scroll to make sure the option is fully
+visible.
+
+If you want to install a Command-K menu into your own application, you should
+[start here.](https://npmjs.com/package/react-cmdk). If you find any issues,
+please [file them here](https://github.com/albingroen/react-cmdk/issues).
+Otherwise, thanks for reading, and have a good rest of your day!

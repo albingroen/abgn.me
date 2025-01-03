@@ -1,7 +1,116 @@
+import fs from "node:fs/promises";
+import graymatter from "gray-matter";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Page() {
+// const POSTS = [
+//   {
+//     url: "/2021-work-from-home-setup",
+//     label: "2021 work from home setup",
+//   },
+//   {
+//     url: "/a-millennials-ideas-on-building-a-tech-company",
+//     label: "A millennials ideas on building a tech company",
+//   },
+//   {
+//     url: "/an-actually-usable-vim-setup",
+//     label: "An actually usable vim setup",
+//   },
+//   {
+//     url: "/goodbye-taskplane",
+//     label: "Goodbye taskplane",
+//   },
+//   {
+//     url: "/how-i-automated-my-dotfiles-screenshots",
+//     label: "How i automated my dotfiles screenshots",
+//   },
+//   {
+//     url: "/how-to-setup-ant-design-with-nextjs",
+//     label: "How to setup ant design with nextjs",
+//   },
+//   {
+//     url: "/how-to-write-prisma-in-vim",
+//     label: "How to write prisma in vim",
+//   },
+//   {
+//     url: "/i-build-self-tracker",
+//     label: "I build self tracker",
+//   },
+//   {
+//     url: "/i-built-a-command-k-component",
+//     label: "I built a command k component",
+//   },
+//   {
+//     url: "/i-spent-a-day-without-a-phone",
+//     label: "I spent a day without a phone",
+//   },
+//   {
+//     url: "/im-trying-out-sublime-text",
+//     label: "Im trying out sublime text",
+//   },
+//   {
+//     url: "/my-indie-projects",
+//     label: "My indie projects",
+//   },
+//   {
+//     url: "/my-ultimate-hacking-keyboard-review",
+//     label: "My ultimate hacking keyboard review",
+//   },
+//   {
+//     url: "/prisma-nextjs-and-postgres-pitfalls",
+//     label: "Prisma nextjs and postgres pitfalls",
+//   },
+//   {
+//     url: "/product-ideas",
+//     label: "Product ideas",
+//   },
+//   {
+//     url: "/react-mac-os-big-sur-loading-component",
+//     label: "React mac os big sur loading component",
+//   },
+//   {
+//     url: "/reducing-useStates-in-react",
+//     label: "Reducing useStates in react",
+//   },
+//   {
+//     url: "/setup-2024",
+//     label: "Setup 2024",
+//   },
+//   {
+//     url: "/svelte-and-prisma",
+//     label: "Svelte and prisma",
+//   },
+//   {
+//     url: "/the-real-win-with-tailwind",
+//     label: "The real win with tailwind",
+//   },
+//   {
+//     url: "/vscode-iterm-automatic-theme-switching",
+//     label: "Vscode iterm automatic theme switching",
+//   },
+//   {
+//     url: "/why-we-should-solve-our-own-problems",
+//     label: "Why we should solve our own problems",
+//   },
+// ];
+
+async function getPosts() {
+  const files = await fs.readdir("src/posts");
+
+  return Promise.all(
+    files.map(async (file) => {
+      return {
+        ...graymatter(await fs.readFile(`src/posts/${file}`)),
+        slug: file.replace(/\.mdx$/, ""),
+      };
+    }),
+  );
+}
+
+export default async function Page() {
+  const posts = await getPosts();
+
   return (
     <main className="w-full max-w-screen-md mx-auto px-6 py-20 space-y-20 text-balance">
       <section className="space-y-5">
@@ -143,16 +252,32 @@ export default function Page() {
         </div>
       </section>
 
-      {/* <section className="space-y-6">
+      <section className="space-y-6">
         <h2 className="text-2xl font-semibold tracking-tight">
           Where my thoughts go
         </h2>
         <p className="leading-relaxed">
-          Writing is a necessary for me. There's too much floating around in
-          that brain of mine. So, here you'll find anything and everything that
-          comes to mind for me.
+          Writing is a necessary for me. There&apos;s too much floating around
+          in that brain of mine. So, here you&apos;ll find anything and
+          everything that comes to mind for me.
         </p>
-      </section> */}
+        <ul className="space-y-2">
+          {posts
+            .sort((a, b) => {
+              const aDate = new Date(a.data.date);
+              const bDate = new Date(b.data.date);
+
+              return bDate.getTime() - aDate.getTime();
+            })
+            .map((post) => (
+              <li key={post.data.title}>
+                <Link href={`/blog/${post.slug}`} className="link">
+                  <p>{post.data.title}</p>
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </section>
 
       <section className="space-y-5">
         <div className="space-y-6">
