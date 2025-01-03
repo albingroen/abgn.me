@@ -1,6 +1,7 @@
 "use client";
 
 import { Post } from "@/types";
+import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -36,7 +37,8 @@ export default function Posts(props: { posts: Post[] }) {
                     </p>
                   </div>
                   <p className="text-sm text-gray-500">
-                    {post.data.date} · {post.data.author}
+                    {format(new Date(post.data.date), "MMM d, yyyy")} ·{" "}
+                    {post.data.author}
                   </p>
                 </div>
 
@@ -46,10 +48,10 @@ export default function Posts(props: { posts: Post[] }) {
                     width={1600}
                     height={800}
                     src={post.data.image}
-                    className="aspect-video object-top object-cover sm:max-w-xs rounded-md"
+                    className="aspect-video object-top object-cover sm:max-w-[15rem] rounded-md"
                   />
                 ) : (
-                  <div className="w-full sm:max-w-xs aspect-video bg-gray-800 rounded-md" />
+                  <div className="w-full sm:max-w-[15rem] aspect-video bg-gray-800 rounded-md" />
                 )}
               </Link>
             </li>
