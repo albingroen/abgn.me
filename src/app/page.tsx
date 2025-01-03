@@ -2,111 +2,44 @@ import fs from "node:fs/promises";
 import graymatter from "gray-matter";
 import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Posts from "@/components/posts";
+import { Post, PostFrontMatter } from "@/types";
+import { Suspense } from "react";
 
-// const POSTS = [
-//   {
-//     url: "/2021-work-from-home-setup",
-//     label: "2021 work from home setup",
-//   },
-//   {
-//     url: "/a-millennials-ideas-on-building-a-tech-company",
-//     label: "A millennials ideas on building a tech company",
-//   },
-//   {
-//     url: "/an-actually-usable-vim-setup",
-//     label: "An actually usable vim setup",
-//   },
-//   {
-//     url: "/goodbye-taskplane",
-//     label: "Goodbye taskplane",
-//   },
-//   {
-//     url: "/how-i-automated-my-dotfiles-screenshots",
-//     label: "How i automated my dotfiles screenshots",
-//   },
-//   {
-//     url: "/how-to-setup-ant-design-with-nextjs",
-//     label: "How to setup ant design with nextjs",
-//   },
-//   {
-//     url: "/how-to-write-prisma-in-vim",
-//     label: "How to write prisma in vim",
-//   },
-//   {
-//     url: "/i-build-self-tracker",
-//     label: "I build self tracker",
-//   },
-//   {
-//     url: "/i-built-a-command-k-component",
-//     label: "I built a command k component",
-//   },
-//   {
-//     url: "/i-spent-a-day-without-a-phone",
-//     label: "I spent a day without a phone",
-//   },
-//   {
-//     url: "/im-trying-out-sublime-text",
-//     label: "Im trying out sublime text",
-//   },
-//   {
-//     url: "/my-indie-projects",
-//     label: "My indie projects",
-//   },
-//   {
-//     url: "/my-ultimate-hacking-keyboard-review",
-//     label: "My ultimate hacking keyboard review",
-//   },
-//   {
-//     url: "/prisma-nextjs-and-postgres-pitfalls",
-//     label: "Prisma nextjs and postgres pitfalls",
-//   },
-//   {
-//     url: "/product-ideas",
-//     label: "Product ideas",
-//   },
-//   {
-//     url: "/react-mac-os-big-sur-loading-component",
-//     label: "React mac os big sur loading component",
-//   },
-//   {
-//     url: "/reducing-useStates-in-react",
-//     label: "Reducing useStates in react",
-//   },
-//   {
-//     url: "/setup-2024",
-//     label: "Setup 2024",
-//   },
-//   {
-//     url: "/svelte-and-prisma",
-//     label: "Svelte and prisma",
-//   },
-//   {
-//     url: "/the-real-win-with-tailwind",
-//     label: "The real win with tailwind",
-//   },
-//   {
-//     url: "/vscode-iterm-automatic-theme-switching",
-//     label: "Vscode iterm automatic theme switching",
-//   },
-//   {
-//     url: "/why-we-should-solve-our-own-problems",
-//     label: "Why we should solve our own problems",
-//   },
-// ];
-
-async function getPosts() {
+async function getPosts(): Promise<Post[]> {
   const files = await fs.readdir("src/posts");
 
   return Promise.all(
     files.map(async (file) => {
-      return {
-        ...graymatter(await fs.readFile(`src/posts/${file}`)),
+      const { data, content } = graymatter(
+        await fs.readFile(`src/posts/${file}`),
+      );
+
+      const post: Post = {
+        data: data as PostFrontMatter,
+        content,
         slug: file.replace(/\.mdx$/, ""),
       };
+
+      return post;
     }),
   );
 }
+
+const PROJECTS = [
+  {
+    label: "prismabuilder.io",
+    href: "https://prismabuilder.io",
+  },
+  {
+    label: "react-cmdk",
+    href: "https://react-cmdk.com",
+  },
+  {
+    label: "quick.nvim",
+    href: "https://github.com/albingroen/quick.nvim",
+  },
+];
 
 export default async function Page() {
   const posts = await getPosts();
@@ -118,11 +51,13 @@ export default async function Page() {
           <Image
             width={64}
             height={64}
-            className="w-16 h-16"
+            className="w-20 h-20 rounded"
             src="/dither.png"
             alt=""
           />
-          <h1 className="font-bold tracking-tight text-4xl">Hej!</h1>
+          <h1 className="font-bold tracking-tight text-4xl">
+            Hej, I&apos;m Albin
+          </h1>
         </div>
         <div className="space-y-2">
           <p>My name is Albin Groen.</p>
@@ -131,9 +66,7 @@ export default async function Page() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight">
-          What do I do now?
-        </h2>
+        <h2 className="text-2xl font-semibold tracking-tight">What I do now</h2>
         <p className="leading-relaxed">
           I design and build interfaces around audio at{" "}
           <a className="link" href="https://allears.ai/en">
@@ -171,50 +104,14 @@ export default async function Page() {
             </p>
           </div>
 
-          <ul className="space-y-1">
-            <li>
-              <a
-                target="_blank"
-                href="https://prismabuilder.io"
-                className="gap-0.5 hover:bg-gray-900 rounded-md px-4 py-3 -mx-4 -my-3 flex flex-col"
-              >
-                <p className="font-semibold leading-relaxed tracking-tight text-lg">
-                  prismabuilder.io
-                </p>
-                <p className="leading-relaxed max-w-sm text-gray-400">
-                  A graphical web interface for building Prisma database schemas
-                  in an easier way.
-                </p>
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://react-cmdk.com"
-                className="gap-0.5 hover:bg-gray-900 rounded-md px-4 py-3 -mx-4 -my-3 flex flex-col"
-              >
-                <p className="font-semibold leading-relaxed tracking-tight text-lg">
-                  react-cmdk
-                </p>
-                <p className="leading-relaxed max-w-sm text-gray-400">
-                  A React.js package for creating command palettes.
-                </p>
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://github.com/albingroen/quick.nvim"
-                className="gap-0.5 hover:bg-gray-900 rounded-md px-4 py-3 -mx-4 -my-3 flex flex-col"
-              >
-                <p className="font-semibold leading-relaxed tracking-tight text-lg">
-                  quick.nvim
-                </p>
-                <p className="leading-relaxed max-w-sm text-gray-400">
-                  A lean and mean Neovim configuration in Lua.
-                </p>
-              </a>
-            </li>
+          <ul className="space-y-2 list-disc list-inside">
+            {PROJECTS.map((PROJECT) => (
+              <li key={PROJECT.href}>
+                <a target="_blank" href={PROJECT.href} className="link">
+                  {PROJECT.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
           <hr className="border-gray-800" />
@@ -252,37 +149,26 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold tracking-tight">
-          Where my thoughts go
-        </h2>
-        <p className="leading-relaxed">
-          Writing is a necessary for me. There&apos;s too much floating around
-          in that brain of mine. So, here you&apos;ll find anything and
-          everything that comes to mind for me.
-        </p>
-        <ul className="space-y-2">
-          {posts
-            .sort((a, b) => {
-              const aDate = new Date(a.data.date);
-              const bDate = new Date(b.data.date);
-
-              return bDate.getTime() - aDate.getTime();
-            })
-            .map((post) => (
-              <li key={post.data.title}>
-                <Link href={`/blog/${post.slug}`} className="link">
-                  <p>{post.data.title}</p>
-                </Link>
-              </li>
-            ))}
-        </ul>
+      <section className="space-y-12">
+        <div className="space-y-6">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Where my thoughts go
+          </h2>
+          <p className="leading-relaxed">
+            Writing is a necessary for me. There&apos;s too much floating around
+            in that brain of mine. So, here you&apos;ll find anything and
+            everything that comes to mind for me.
+          </p>
+        </div>
+        <Suspense>
+          <Posts posts={posts} />
+        </Suspense>
       </section>
 
       <section className="space-y-5">
         <div className="space-y-6">
           <h2 className="text-2xl font-semibold tracking-tight">
-            How can I reach you?
+            How you can reach me
           </h2>
           <p className="leading-relaxed">
             I&apos;m always open to a chat. Do you need advice in your career?
@@ -317,7 +203,7 @@ export default async function Page() {
           </p>
         </div>
 
-        <ul className="space-y-2">
+        <ul className="space-y-2 list-disc list-inside">
           <li>
             <a className="link" href="https://github.com/albingroen">
               GitHub

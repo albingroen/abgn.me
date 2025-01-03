@@ -14,3 +14,7 @@
     @apply text-blue-400 underline underline-offset-2 decoration-1;
   }
 }
+
+ul li::marker {
+  @apply text-gray-600;
+}

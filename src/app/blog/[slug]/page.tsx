@@ -22,8 +22,11 @@ export default async function Page({
         <ArrowLeftIcon className="w-5" />
         <span>Back</span>
       </Link>
-      <div className="space-y-5 mt-8">
-        <h1 className="m-0">{data.title}</h1>
+      <div className="space-y-6 mt-8">
+        <div className="space-y-3">
+          <h1 className="m-0">{data.title}</h1>
+          <p className="text-gray-500 text-lg">{data.excerpt}</p>
+        </div>
         <div className="flex items-center gap-3">
           <Image
             alt=""
