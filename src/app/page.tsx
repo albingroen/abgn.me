@@ -5,6 +5,7 @@ import Image from "next/image";
 import Posts from "@/components/posts";
 import { Post, PostFrontMatter } from "@/types";
 import { Suspense } from "react";
+import Link from "next/link";
 
 async function getPosts(): Promise<Post[]> {
   const files = await fs.readdir("src/posts");
@@ -126,12 +127,12 @@ export default async function Page() {
                 width={80}
                 height={80}
                 className="w-16 h-16 sm:w-20 sm:h-20 rounded"
-                src="/vdk-logo.png"
+                src="/vcc-logo.png"
                 alt=""
               />
               <div className="space-y-1 flex-1">
                 <h3 className="font-medium sm:text-lg tracking-tight">
-                  Västerås Datorklubb
+                  Västerås Coffee & Code
                 </h3>
                 <p className="max-w-xs text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                   For people interested in anything between hardware and
@@ -254,6 +255,14 @@ export default async function Page() {
         Copyright © {new Date().getFullYear()} Albin Groen. All rights
         reserved.
       </footer>
+
+      <p className="leading-relaxed text-gray-500">
+        Are you curious about what tools I use on a daily basis? Check it out{" "}
+        <Link className="link" href="/uses">
+          here
+        </Link>
+        .
+      </p>
     </main>
   );
 }
