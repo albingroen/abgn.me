@@ -44,8 +44,8 @@ export default function Page() {
               I&apos;ve spent{" "}
               {formatDistance(new Date().getTime(), new Date("2017").getTime())}{" "}
               years tweaking and refining my setup to be as productive and
-              enjoyable as possible. Here's a list of the software I use on a
-              daily basis.
+              enjoyable as possible. Here&apos;s a list of the software I use on
+              a daily basis.
             </p>
           </div>
         </header>
