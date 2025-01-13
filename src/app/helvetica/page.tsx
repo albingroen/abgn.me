@@ -7,7 +7,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Helvetica",
   description:
-    "I have somwhat of an unusual interest in the Helvetica typeface. Here, I collect photographs of it, taken from the real world.",
+    "I have somewhat of an unusual interest in the Helvetica typeface. Here, I collect photographs of it, taken from the real world.",
 };
 
 export default async function Page() {
@@ -25,7 +25,7 @@ export default async function Page() {
           <h1 className="font-bold tracking-tight text-4xl">Helvetica</h1>
 
           <p>
-            I have somwhat of an unusual interest in the Helvetica typeface.
+            I have somewhat of an unusual interest in the Helvetica typeface.
             Here, I collect photographs of it, taken from the real world.
           </p>
         </div>
