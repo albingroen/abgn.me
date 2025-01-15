@@ -15,7 +15,7 @@ export default function Page() {
 
           <Image
             alt=""
-            src="/setup.jpeg"
+            src="/setup.jpg"
             width={543}
             height={362}
             className="rounded"
