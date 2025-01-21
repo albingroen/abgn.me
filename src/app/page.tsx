@@ -46,7 +46,7 @@ export default async function Page() {
   const posts = await getPosts();
 
   return (
-    <main className="w-full max-w-screen-md mx-auto px-6 py-20 space-y-20 text-balance">
+    <main className="w-full max-w-screen-md mx-auto px-6 py-20 space-y-16 text-balance">
       <section className="space-y-5">
         <div className="space-y-9">
           <Image
@@ -66,7 +66,7 @@ export default async function Page() {
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">What I do now</h2>
         <p className="leading-relaxed">
           I design and build interfaces around audio at{" "}
@@ -89,7 +89,7 @@ export default async function Page() {
         </p>
       </section>
 
-      <section className="space-y-6">
+      <section className="space-y-4">
         <h2 className="text-2xl font-semibold tracking-tight">My projects</h2>
 
         <div className="space-y-8">
@@ -151,7 +151,7 @@ export default async function Page() {
       </section>
 
       <section className="space-y-12">
-        <div className="space-y-6">
+        <div className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">
             Where my thoughts go
           </h2>
@@ -166,8 +166,8 @@ export default async function Page() {
         </Suspense>
       </section>
 
-      <section className="space-y-5">
-        <div className="space-y-6">
+      <section className="space-y-7">
+        <div className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">
             How you can reach me
           </h2>
@@ -194,8 +194,8 @@ export default async function Page() {
         </p>
       </section>
 
-      <section className="space-y-5">
-        <div className="space-y-6">
+      <section className="space-y-7">
+        <div className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">Socials</h2>
           <p>
             Yes, I&apos;m on social media. Posting isn&apos;t really my
