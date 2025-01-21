@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    @apply antialiased dark:bg-gray-950;
+    @apply antialiased dark:bg-gray-900;
     color-scheme: light;
 
     @media (prefers-color-scheme: dark) {
