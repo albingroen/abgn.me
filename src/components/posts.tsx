@@ -61,7 +61,7 @@ export default function Posts(props: { posts: Post[] }) {
       <Link
         scroll={false}
         href={{ pathname: "/", query: { "blog-open": !isBlogOpen } }}
-        className="p-2 rounded-md bg-gray-900 hover:bg-gray-800 transition hover:text-white text-center w-full mt-12 block"
+        className="p-2 rounded-md bg-gray-200 dark:bg-gray-900 hover:bg-gray-300 dark:hover:bg-gray-800 transition dark:hover:text-white text-center w-full mt-12 block"
       >
         {isBlogOpen ? "Show less" : "Show more"}
       </Link>

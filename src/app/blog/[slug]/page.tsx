@@ -18,7 +18,7 @@ export default async function Page({
   );
 
   return (
-    <article className="w-full max-w-screen-md mx-auto px-6 py-20 text-balance prose prose-invert prose-a:link prose-headings:font-semibold prose-headings:tracking-tight">
+    <article className="w-full max-w-screen-md mx-auto px-6 py-20 text-balance prose dark:prose-invert prose-a:link prose-headings:font-semibold prose-headings:tracking-tight">
       <Link href="/" className="flex items-center gap-1.5">
         <ArrowLeftIcon className="w-5" />
         <span>Back</span>

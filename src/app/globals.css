@@ -4,17 +4,21 @@
 
 @layer base {
   :root {
-    @apply antialiased bg-gray-950;
-    color-scheme: dark;
+    @apply antialiased dark:bg-gray-950;
+    color-scheme: light;
+
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
   }
 }
 
 @layer components {
   .link {
-    @apply text-blue-400 underline underline-offset-2 decoration-1;
+    @apply text-blue-800 dark:text-blue-400 underline underline-offset-2 decoration-1;
   }
 }
 
 ul li::marker {
-  @apply text-gray-600;
+  @apply text-gray-300 dark:text-gray-600;
 }

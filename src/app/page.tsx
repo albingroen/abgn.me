@@ -115,13 +115,13 @@ export default async function Page() {
             ))}
           </ul>
 
-          <hr className="border-gray-800" />
+          <hr className="border-gray-200 dark:border-gray-800" />
 
           <div className="space-y-4">
             <a
               target="_blank"
               href="https://www.meetup.com/vasteras-datorklubb/?eventOrigin=event_home_page"
-              className="flex gap-3.5 p-3 w-fit border border-gray-800 items-center hover:bg-gray-900 transition rounded-md"
+              className="flex gap-3.5 p-3 w-fit border border-gray-300 dark:border-gray-800 items-center hover:bg-gray-100 dark:hover:bg-gray-900 transition rounded-md"
             >
               <Image
                 width={80}
