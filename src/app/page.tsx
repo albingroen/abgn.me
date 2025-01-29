@@ -257,9 +257,9 @@ export default async function Page() {
       </footer>
 
       <p className="leading-relaxed text-gray-500">
-        Are you curious about what tools I use on a daily basis? Check it out{" "}
+        Are you curious about what tools I use on a daily basis? Check out my{" "}
         <Link className="link" href="/uses">
-          here
+          uses page
         </Link>
         .
       </p>
