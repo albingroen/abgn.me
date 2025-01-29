@@ -141,7 +141,7 @@ export default async function Page() {
               </div>
               <ArrowRightIcon className="w-6 stroke-gray-600" />
             </a>
-            <p className="text-sm text-gray-500 leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
               I organize a meetup group every other Wednesday night in my
               hometown where we meet up to work on side-projects, learn from
               each other, and just have fun.
@@ -256,7 +256,7 @@ export default async function Page() {
         reserved.
       </footer>
 
-      <p className="leading-relaxed text-gray-500">
+      <p className="leading-relaxed text-gray-600 dark:text-gray-300">
         Are you curious about what tools I use on a daily basis? Check out my{" "}
         <Link className="link" href="/uses">
           uses page

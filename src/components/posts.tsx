@@ -29,14 +29,14 @@ export default function Posts(props: { posts: Post[] }) {
               >
                 <div className="flex-1 space-y-3 sm:space-y-4">
                   <div className="space-y-1.5 sm:space-y-2">
-                    <h4 className="text-xl font-semibold tracking-tight leading-normal">
+                    <h3 className="text-xl font-semibold tracking-tight leading-normal">
                       {post.data.title}
-                    </h4>
+                    </h3>
                     <p className="font-light leading-relaxed">
                       {post.data.excerpt}
                     </p>
                   </div>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
                     {format(new Date(post.data.date), "MMM d, yyyy")} ·{" "}
                     {post.data.author}
                   </p>
