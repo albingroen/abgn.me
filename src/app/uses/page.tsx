@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="w-full max-w-screen-md mx-auto px-6 py-20 space-y-20 text-balance">
+    <main className="w-full max-w-(--breakpoint-md) mx-auto px-6 py-20 space-y-20 text-balance">
       <div className="space-y-10">
         <header className="space-y-12">
           <Link href="/" className="flex items-center gap-1.5 link">
@@ -53,7 +53,7 @@ export default function Page() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight">Software</h2>
 
-          <ul className="space-y-2 list-disc list-inside">
+          <ul className="space-y-2 list-disc pl-4">
             <li>
               <a className="link" href="https://zed.dev">
                 Zed
@@ -65,7 +65,7 @@ export default function Page() {
                 Neovim
               </a>
 
-              <ul className="list-disc list-inside pl-6 mt-1">
+              <ul className="list-disc pl-5 mt-1">
                 <li>
                   <a
                     className="link"
@@ -82,7 +82,7 @@ export default function Page() {
                 Kitty
               </a>
 
-              <ul className="list-disc list-inside pl-6 mt-1">
+              <ul className="list-disc pl-5 mt-1">
                 <li>
                   <a
                     className="link"
@@ -99,7 +99,7 @@ export default function Page() {
                 Fish
               </a>
 
-              <ul className="list-disc list-inside pl-6 mt-1">
+              <ul className="list-disc pl-5 mt-1">
                 <li>
                   <a
                     className="link"

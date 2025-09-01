@@ -14,8 +14,8 @@ export default async function Page() {
   const images = await fs.readdir("public/type");
 
   return (
-    <main className="w-full max-w-screen-2xl mx-auto px-6 py-20 space-y-20 text-balance">
-      <header className="max-w-screen-md mx-auto space-y-8">
+    <main className="w-full max-w-(--breakpoint-2xl) mx-auto px-6 py-20 space-y-20 text-balance">
+      <header className="max-w-(--breakpoint-md) mx-auto space-y-8">
         <Link href="/" className="flex items-center gap-1.5 link">
           <ArrowLeftIcon className="w-5" />
           <span>Back</span>
@@ -40,7 +40,7 @@ export default async function Page() {
               width={1920}
               height={1080}
               src={`/type/${image}`}
-              className="object-cover object-center rounded aspect-square"
+              className="object-cover object-center rounded-sm aspect-square"
               key={image}
               alt=""
             />

@@ -48,10 +48,10 @@ export default function Posts(props: { posts: Post[] }) {
                     width={1600}
                     height={800}
                     src={post.data.image}
-                    className="aspect-video object-top object-cover sm:max-w-[15rem] rounded-md"
+                    className="aspect-video object-top object-cover sm:max-w-60 rounded-md"
                   />
                 ) : (
-                  <div className="w-full sm:max-w-[15rem] aspect-video bg-gray-800 rounded-md" />
+                  <div className="w-full sm:max-w-60 aspect-video bg-gray-800 rounded-md" />
                 )}
               </Link>
             </li>

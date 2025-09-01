@@ -46,13 +46,13 @@ export default async function Page() {
   const posts = await getPosts();
 
   return (
-    <main className="w-full max-w-screen-md mx-auto px-6 py-20 space-y-16 text-balance">
+    <main className="w-full max-w-(--breakpoint-md) mx-auto px-6 py-20 space-y-16 text-balance">
       <section className="space-y-5">
         <div className="space-y-9">
           <Image
             width={64}
             height={64}
-            className="w-20 h-20 rounded"
+            className="w-20 h-20 rounded-sm"
             src="/dither.png"
             alt=""
           />
@@ -105,10 +105,10 @@ export default async function Page() {
             </p>
           </div>
 
-          <ul className="space-y-2 list-disc list-inside">
+          <ul className="space-y-2 list-disc pl-4">
             {PROJECTS.map((PROJECT) => (
               <li key={PROJECT.href}>
-                <a target="_blank" href={PROJECT.href} className="link">
+                <a target="_blank" href={PROJECT.href} className="link block">
                   {PROJECT.label}
                 </a>
               </li>
@@ -126,7 +126,7 @@ export default async function Page() {
               <Image
                 width={80}
                 height={80}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-sm"
                 src="/vcc-logo.png"
                 alt=""
               />
@@ -204,7 +204,7 @@ export default async function Page() {
           </p>
         </div>
 
-        <ul className="space-y-2 list-disc list-inside">
+        <ul className="space-y-2 list-disc pl-4">
           <li>
             <a className="link" href="https://github.com/albingroen">
               GitHub
