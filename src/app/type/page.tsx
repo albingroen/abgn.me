@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Helvetica",
+  title: "Type",
   description:
-    "I have somewhat of an unusual interest in the Helvetica typeface. Here, I collect photographs of it, taken from the real world.",
+    "I have somewhat of an unusual interest in typefaces. Here, I collect photographs of ones I find in the world around me that I find good or interesting.",
 };
 
 export default async function Page() {
-  const images = await fs.readdir("public/helvetica");
+  const images = await fs.readdir("public/type");
 
   return (
     <main className="w-full max-w-screen-2xl mx-auto px-6 py-20 space-y-20 text-balance">
@@ -22,11 +22,12 @@ export default async function Page() {
         </Link>
 
         <div className="space-y-5">
-          <h1 className="font-bold tracking-tight text-4xl">Helvetica</h1>
+          <h1 className="font-bold tracking-tight text-4xl">Type</h1>
 
           <p>
-            I have somewhat of an unusual interest in the Helvetica typeface.
-            Here, I collect photographs of it, taken from the real world.
+            I have somewhat of an unusual interest in typefaces. Here, I collect
+            photographs of ones I find in the world around me that I find good
+            or interesting.
           </p>
         </div>
       </header>
@@ -38,8 +39,8 @@ export default async function Page() {
             <Image
               width={1920}
               height={1080}
-              src={`/helvetica/${image}`}
-              className="object-cover object-center rounded"
+              src={`/type/${image}`}
+              className="object-cover object-center rounded aspect-square"
               key={image}
               alt=""
             />
