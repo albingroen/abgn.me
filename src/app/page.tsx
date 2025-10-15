@@ -221,11 +221,6 @@ export default async function Page() {
             </a>
           </li>
           <li>
-            <a className="link" href="https://layers.to/abgn">
-              Layers (Design portfolio)
-            </a>
-          </li>
-          <li>
             <a className="link" href="https://www.youtube.com/@albingroen">
               YouTube
             </a>
