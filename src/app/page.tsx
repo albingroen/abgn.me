@@ -238,11 +238,6 @@ export default async function Page() {
               Hackernews
             </a>
           </li>
-          <li>
-            <a className="link" href="https://read.cv/abgn">
-              read.cv
-            </a>
-          </li>
         </ul>
       </section>
 
