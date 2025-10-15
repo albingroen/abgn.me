@@ -33,7 +33,7 @@ export default async function Page({
             alt=""
             width={48}
             height={48}
-            src="/dither.png"
+            src="/profile.png"
             className="w-12 h-12 rounded-full m-0"
           />
           <div>

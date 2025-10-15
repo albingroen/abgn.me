@@ -53,7 +53,7 @@ export default async function Page() {
             width={64}
             height={64}
             className="w-20 h-20 rounded-sm"
-            src="/dither.png"
+            src="/profile.png"
             alt=""
           />
           <h1 className="font-bold tracking-tight text-4xl">
