@@ -211,6 +211,11 @@ export default async function Page() {
             </a>
           </li>
           <li>
+            <a className="link" href="https://x.com/albingroen">
+              X/Twitter
+            </a>
+          </li>
+          <li>
             <a className="link" href="https://bsky.app/profile/abgn.me">
               BlueSky
             </a>
