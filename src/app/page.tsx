@@ -61,8 +61,11 @@ export default async function Page() {
           </h1>
         </div>
         <div className="space-y-2">
-          <p>My name is Albin Groen.</p>
-          <p>I&apos;m a self-taught designer turned developer.</p>
+          <p>
+            I&apos;m a web and app developer with 8+ years of React/React-Native
+            and TypeScript experience. I&apos;m also a design enthusiast,
+            speaker, and Open Source maintainer.
+          </p>
         </div>
       </section>
 
