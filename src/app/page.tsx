@@ -52,7 +52,7 @@ export default async function Page() {
           <Image
             width={64}
             height={64}
-            className="w-20 h-20 rounded-sm"
+            className="w-20 h-20 rounded-full"
             src="/profile.png"
             alt=""
           />
