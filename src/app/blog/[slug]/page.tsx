@@ -37,8 +37,8 @@ export default async function Page({
             className="w-12 h-12 rounded-full m-0"
           />
           <div>
-            <p className="m-0 font-medium">{data.author}</p>
-            <p className="m-0 text-sm text-gray-500">
+            <p className="!m-0 font-medium">{data.author}</p>
+            <p className="!m-0 text-sm text-gray-500">
               {format(new Date(data.date), "MMM d, yyyy")}
             </p>
           </div>
