@@ -1,4 +1,4 @@
-# abgn-neue
+# abgn.me
 
 A personal website and blog built with [TanStack Start](https://tanstack.com/start), [React 19](https://react.dev/), and [Tailwind CSS v4](https://tailwindcss.com/).
 
