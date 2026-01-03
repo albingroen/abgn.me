@@ -14,7 +14,6 @@
     "@content-collections/mdx": "^0.2.2",
     "@content-collections/vite": "^0.2.8",
     "@fontsource-variable/geist": "^5.2.8",
-    "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-devtools": "^0.7.0",
     "@tanstack/react-router": "^1.132.0",
@@ -32,6 +31,7 @@
     "zod": "^4.3.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "@tanstack/devtools-vite": "^0.3.11",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.2.0",
