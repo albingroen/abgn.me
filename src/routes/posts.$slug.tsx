@@ -3,6 +3,7 @@ import { getPost } from "@/data/posts";
 import { MDXContent } from "@content-collections/mdx/react";
 import { ArticleLayout } from "@/components/article-layout";
 import { format } from "date-fns";
+import Zoom from "react-medium-image-zoom";
 
 export const Route = createFileRoute("/posts/$slug")({
   component: PostPage,
@@ -66,7 +67,17 @@ function PostPage() {
         </>
       }
     >
-      <MDXContent code={post.mdx} />
+      <MDXContent
+        components={{
+          img: (props) => (
+            <Zoom>
+              <img {...props} />
+            </Zoom>
+          ),
+          Zoom,
+        }}
+        code={post.mdx}
+      />
     </ArticleLayout>
   );
 }
