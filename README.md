@@ -51,14 +51,23 @@ bun --bun run test
 
 ```
 src/
-├── routes/              # File-based routing
-│   ├── __root.tsx       # Root layout
-│   ├── index.tsx        # Home page
-│   └── posts.$slug.tsx  # Blog post pages
-├── posts/               # MDX blog posts
-├── data/                # Data fetching functions
-└── components/          # React components
+├── routes/                      # File-based routing
+│   ├── __root.tsx               # Root layout
+│   ├── index.tsx                # Home page w/ posts, projects, inspiration links
+│   ├── inspiration.$category.tsx# Dynamic inspiration galleries powered by Cloudinary
+│   ├── posts.$slug.tsx          # Blog post pages rendered from MDX
+│   └── uses.tsx                 # Uses/setup page
+├── posts/                       # MDX blog posts
+├── data/                        # Data fetching functions
+└── components/                  # React components
 ```
+
+## Pages
+
+- `/` – Landing page with hero intro, social links, latest posts, featured projects, and quick access to Cloudinary-powered inspiration categories.
+- `/uses` – Long-form article detailing the software and hardware setup, rendered with the shared `ArticleLayout` component.
+- `/inspiration/:category` – Dynamic galleries (e.g., `/inspiration/ui`) that fetch Cloudinary folders on the server, offer zoom controls, and render masonry grids of inspiration images.
+- `/posts/:slug` – MDX blog posts loaded via content-collections, complete with SEO metadata, publication dates, and zoomable inline media.
 
 ## Writing Blog Posts
 
