@@ -117,3 +117,18 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+@layer components {
+  .fade-in {
+    animation: fadeIn ease-in-out 1.5s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

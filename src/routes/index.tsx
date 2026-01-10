@@ -2,14 +2,31 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { getPosts } from "@/data/posts";
 import { getProjects } from "@/data/projects";
 import { format } from "date-fns";
+import { v2 as cloudinary } from "cloudinary";
+import { createServerFn } from "@tanstack/react-start";
+
+const getInspirationCategories = createServerFn().handler(async () => {
+  cloudinary.config({
+    secure: true,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    cloud_name: process.env.CLOUDINARY_NAME,
+  });
+
+  return cloudinary.api
+    .sub_folders("Inspiration")
+    .then((res) => res.folders) as Promise<
+    Array<{ name: string; external_id: string }>
+  >;
+});
 
 export const Route = createFileRoute("/")({
   component: App,
-
   loader: async () => {
+    const inspirationCategories = await getInspirationCategories();
     const posts = await getPosts();
     const projects = await getProjects();
-    return { posts, projects };
+    return { posts, projects, inspirationCategories };
   },
 
   head: () => {
@@ -39,7 +56,7 @@ export const Route = createFileRoute("/")({
 });
 
 function App() {
-  const { posts, projects } = Route.useLoaderData();
+  const { posts, projects, inspirationCategories } = Route.useLoaderData();
 
   return (
     <div className="text-white min-h-screen grid lg:grid-cols-2 xl:grid-cols-3 py-20 px-6 lg:p-20 gap-8 lg:gap-18">
@@ -55,14 +72,6 @@ function App() {
         </div>
 
         <ul className="list-disc list-inside flex flex-col gap-2">
-          <li>
-            <Link
-              to="/uses"
-              className="text-gray-400 hover:text-white underline decoration-gray-700 underline-offset-4"
-            >
-              /uses
-            </Link>
-          </li>
           <li>
             <a
               href="https://x.com/albingroen"
@@ -118,6 +127,28 @@ function App() {
             </a>
           </li>
         </ul>
+
+        <ul className="list-disc list-inside flex flex-col gap-2">
+          <li>
+            <Link
+              to="/uses"
+              className="text-gray-400 hover:text-white underline decoration-gray-700 underline-offset-4"
+            >
+              /uses
+            </Link>
+          </li>
+          {inspirationCategories.map((cat) => (
+            <li key={cat.external_id}>
+              <Link
+                to="/inspiration/$category"
+                params={{ category: cat.name }}
+                className="text-gray-400 hover:text-white underline decoration-gray-700 underline-offset-4"
+              >
+                {cat.name} inspiration
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -136,6 +167,7 @@ function App() {
                 >
                   {post.image && (
                     <img
+                      loading="lazy"
                       src={post.image}
                       alt={post.title}
                       className="w-full aspect-video object-cover"
@@ -146,7 +178,7 @@ function App() {
                       {post.title}
                     </h3>
 
-                    <p className="text-gray-400 text-sm text-balance">
+                    <p className="text-gray-400 text-sm text-balance leading-relaxed">
                       {post.excerpt}
                     </p>
 
@@ -171,12 +203,12 @@ function App() {
                 <a
                   href={project.href}
                   target="_blank"
-                  className="flex flex-col gap-1.5 lg:py-2 lg:px-3 lg:-my-2 lg:-mx-3 lg:hover:bg-gray-800"
+                  className="flex flex-col gap-1.5 lg:py-2 lg:px-3 lg:-my-2 lg:-mx-3 lg:hover:bg-gray-800 group"
                 >
-                  <h3 className="text-lg underline decoration-gray-700 underline-offset-8 text-balance">
+                  <h3 className="text-lg underline decoration-gray-700 underline-offset-8 text-balance text-gray-400 group-hover:text-inherit">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm text-balance">
+                  <p className="text-gray-500 text-sm text-balance group-hover:text-gray-400">
                     {project.description}
                   </p>
                 </a>

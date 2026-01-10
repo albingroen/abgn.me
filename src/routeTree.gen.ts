@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsesRouteImport } from './routes/uses'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsSlugRouteImport } from './routes/posts.$slug'
+import { Route as InspirationCategoryRouteImport } from './routes/inspiration.$category'
 
 const UsesRoute = UsesRouteImport.update({
   id: '/uses',
@@ -28,34 +29,43 @@ const PostsSlugRoute = PostsSlugRouteImport.update({
   path: '/posts/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InspirationCategoryRoute = InspirationCategoryRouteImport.update({
+  id: '/inspiration/$category',
+  path: '/inspiration/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/uses': typeof UsesRoute
+  '/inspiration/$category': typeof InspirationCategoryRoute
   '/posts/$slug': typeof PostsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/uses': typeof UsesRoute
+  '/inspiration/$category': typeof InspirationCategoryRoute
   '/posts/$slug': typeof PostsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/uses': typeof UsesRoute
+  '/inspiration/$category': typeof InspirationCategoryRoute
   '/posts/$slug': typeof PostsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/uses' | '/posts/$slug'
+  fullPaths: '/' | '/uses' | '/inspiration/$category' | '/posts/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/uses' | '/posts/$slug'
-  id: '__root__' | '/' | '/uses' | '/posts/$slug'
+  to: '/' | '/uses' | '/inspiration/$category' | '/posts/$slug'
+  id: '__root__' | '/' | '/uses' | '/inspiration/$category' | '/posts/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   UsesRoute: typeof UsesRoute
+  InspirationCategoryRoute: typeof InspirationCategoryRoute
   PostsSlugRoute: typeof PostsSlugRoute
 }
 
@@ -82,12 +92,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PostsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inspiration/$category': {
+      id: '/inspiration/$category'
+      path: '/inspiration/$category'
+      fullPath: '/inspiration/$category'
+      preLoaderRoute: typeof InspirationCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   UsesRoute: UsesRoute,
+  InspirationCategoryRoute: InspirationCategoryRoute,
   PostsSlugRoute: PostsSlugRoute,
 }
 export const routeTree = rootRouteImport
