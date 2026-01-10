@@ -74,7 +74,7 @@ function RouteComponent() {
 
   return (
     <div className="text-white min-h-screen grid py-20 px-6 lg:p-20 gap-8 lg:grid-cols-12">
-      <div className="space-y-6 lg:sticky lg:top-20 lg:self-start col-span-4">
+      <div className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:col-span-4">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-gray-400 hover:text-white"
@@ -101,7 +101,7 @@ function RouteComponent() {
         </div>
       </div>
 
-      <div className="col-span-8 flex flex-col space-y-5">
+      <div className="lg:col-span-8 flex flex-col space-y-5">
         <div className="flex items-center gap-2 lg:gap-1.5 lg:self-end">
           {zoom !== DEFAULT_ZOOM && (
             <button
