@@ -167,6 +167,7 @@ function App() {
                 >
                   {post.image && (
                     <img
+                      decoding="async"
                       loading="lazy"
                       src={post.image}
                       alt={post.title}

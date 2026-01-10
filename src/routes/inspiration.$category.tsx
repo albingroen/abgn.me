@@ -70,8 +70,6 @@ function RouteComponent() {
 
   const [zoom, setZoom] = useState<number>(DEFAULT_ZOOM);
 
-  console.log(images[0]);
-
   return (
     <div className="text-white min-h-screen grid py-20 px-6 lg:p-20 gap-8 lg:grid-cols-12">
       <div className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:col-span-4">
