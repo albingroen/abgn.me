@@ -26,7 +26,9 @@ const getImages = createServerFn()
         type: "upload",
         max_results: 100,
       })
-      .then((res) => res.resources) as Promise<Array<{ secure_url: string }>>;
+      .then((res) => res.resources) as Promise<
+      Array<{ secure_url: string; width: number; height: number }>
+    >;
   });
 
 export const Route = createFileRoute("/inspiration/$category")({
@@ -67,6 +69,8 @@ function RouteComponent() {
   const { category } = Route.useParams();
 
   const [zoom, setZoom] = useState<number>(DEFAULT_ZOOM);
+
+  console.log(images[0]);
 
   return (
     <div className="text-white min-h-screen grid py-20 px-6 lg:p-20 gap-8 lg:grid-cols-12">
@@ -138,7 +142,13 @@ function RouteComponent() {
         >
           {images.map((image) => (
             <Zoom key={image.secure_url}>
-              <img className="w-full mb-4 bg-gray-900" src={image.secure_url} />
+              <img
+                style={{ aspectRatio: image.width / image.height }}
+                className="mb-4 w-full"
+                src={image.secure_url}
+                decoding="async"
+                loading="lazy"
+              />
             </Zoom>
           ))}
         </div>
