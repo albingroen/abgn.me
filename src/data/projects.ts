@@ -1,6 +1,13 @@
 export const getProjects = async () => {
   const projects = [
     {
+      id: 0,
+      title: "logbench",
+      description: "A local log drain for people tired of console.log",
+      href: "https://logbench.dev",
+      lastCommit: "2026-04-01",
+    },
+    {
       id: 1,
       title: "prismabuilder.io",
       description:
@@ -27,8 +34,7 @@ export const getProjects = async () => {
     {
       id: 4,
       title: "notary",
-      description:
-        "A fast, desktop-first & Vim-friendly Markdown editor.",
+      description: "A fast, desktop-first & Vim-friendly Markdown editor.",
       href: "https://github.com/albingroen/notary",
       lastCommit: "2023-06-13",
     },
@@ -51,8 +57,7 @@ export const getProjects = async () => {
     {
       id: 7,
       title: "thing",
-      description:
-        "An open source implementation of Spotify Car Thing.",
+      description: "An open source implementation of Spotify Car Thing.",
       href: "https://github.com/albingroen/thing",
       lastCommit: "2021-11-19",
     },
@@ -75,8 +80,7 @@ export const getProjects = async () => {
     {
       id: 10,
       title: "render-my-markdown",
-      description:
-        "Render any markdown through a simple URL.",
+      description: "Render any markdown through a simple URL.",
       href: "https://github.com/albingroen/render-my-markdown",
       lastCommit: "2021-09-04",
     },
@@ -99,6 +103,7 @@ export const getProjects = async () => {
   ];
 
   return projects.toSorted(
-    (a, b) => new Date(b.lastCommit).getTime() - new Date(a.lastCommit).getTime()
+    (a, b) =>
+      new Date(b.lastCommit).getTime() - new Date(a.lastCommit).getTime(),
   );
 };
