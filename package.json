@@ -9,7 +9,9 @@
     "build": "bun --bun vite build",
     "serve": "bun --bun vite preview",
     "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "fmt:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   },
   "dependencies": {
     "@content-collections/core": "^0.13.0",
@@ -46,6 +48,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "jsdom": "^27.0.0",
     "oxfmt": "^0.44.0",
+    "oxlint": "^1.59.0",
     "typescript": "^5.7.2",
     "vite": "^7.1.7",
     "vitest": "^3.0.5",
