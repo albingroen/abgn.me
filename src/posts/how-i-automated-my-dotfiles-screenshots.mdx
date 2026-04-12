@@ -97,9 +97,7 @@ function main() {
   console.log("Uploading image...");
 
   const dirPath = "/Users/albin/Screenshots";
-  const files = fs
-    .readdirSync(dirPath, "utf8")
-    .filter((file) => !file.startsWith("."));
+  const files = fs.readdirSync(dirPath, "utf8").filter((file) => !file.startsWith("."));
 
   const imagePath = [dirPath, files[files.length - 1]].join("/");
 

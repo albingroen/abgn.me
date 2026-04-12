@@ -55,14 +55,10 @@ function PostPage() {
     <ArticleLayout
       header={
         <>
-          <time className="text-gray-500">
-            {format(new Date(post.date), "MMMM d, yyyy")}
-          </time>
+          <time className="text-gray-500">{format(new Date(post.date), "MMMM d, yyyy")}</time>
           <h1 className="text-4xl text-balance leading-tight">{post.title}</h1>
           {post.excerpt && (
-            <p className="text-xl text-gray-400 text-balance leading-relaxed">
-              {post.excerpt}
-            </p>
+            <p className="text-xl text-gray-400 text-balance leading-relaxed">{post.excerpt}</p>
           )}
         </>
       }

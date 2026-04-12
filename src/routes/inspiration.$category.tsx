@@ -1,12 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { v2 as cloudinary } from "cloudinary";
-import {
-  ArrowLeft,
-  RotateCcwIcon,
-  ZoomInIcon,
-  ZoomOutIcon,
-} from "lucide-react";
+import { ArrowLeft, RotateCcwIcon, ZoomInIcon, ZoomOutIcon } from "lucide-react";
 import { useState } from "react";
 import Zoom from "react-medium-image-zoom";
 
@@ -73,10 +68,7 @@ function RouteComponent() {
   return (
     <div className="text-white min-h-screen grid py-20 px-6 lg:p-20 gap-8 lg:grid-cols-12">
       <div className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:col-span-4">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-white"
-        >
+        <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white">
           <ArrowLeft className="size-4" />
           Back to home
         </Link>
@@ -86,14 +78,13 @@ function RouteComponent() {
 
           <div className="space-y-5">
             <p className="text-gray-400 text-balance leading-relaxed">
-              This is my collection of {category.toLowerCase()} inspiration that
-              I've collected throughout the years. I try to update this when I
-              find new things that speak to me.
+              This is my collection of {category.toLowerCase()} inspiration that I've collected
+              throughout the years. I try to update this when I find new things that speak to me.
             </p>
 
             <p className="text-gray-400 text-balance leading-relaxed">
-              Usually when I come here, I'm in need of new ideas. You're more
-              than welcome to do so as well!
+              Usually when I come here, I'm in need of new ideas. You're more than welcome to do so
+              as well!
             </p>
           </div>
         </div>
@@ -133,11 +124,7 @@ function RouteComponent() {
           </button>
         </div>
 
-        <div
-          key={category}
-          style={{ columns: `${zoom}px` }}
-          className="fade-in -mx-3 sm:mx-0"
-        >
+        <div key={category} style={{ columns: `${zoom}px` }} className="fade-in -mx-3 sm:mx-0">
           {images.map((image) => (
             <Zoom key={image.secure_url}>
               <img

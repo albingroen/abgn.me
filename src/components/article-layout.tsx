@@ -9,10 +9,7 @@ interface ArticleLayoutProps {
 export function ArticleLayout({ children, header }: ArticleLayoutProps) {
   return (
     <div className="text-white min-h-screen max-w-2xl mx-auto px-6 py-16">
-      <Link
-        to="/"
-        className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-10"
-      >
+      <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-10">
         <ArrowLeft className="size-4" />
         Back to home
       </Link>

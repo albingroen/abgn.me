@@ -29,6 +29,7 @@ This is a personal website/blog built with TanStack Start (React meta-framework)
 ### Content Structure
 
 Blog posts are MDX files in `src/posts/` with frontmatter:
+
 ```yaml
 title: string (required)
 date: string (required)

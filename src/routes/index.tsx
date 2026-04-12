@@ -13,9 +13,7 @@ const getInspirationCategories = createServerFn().handler(async () => {
     cloud_name: process.env.CLOUDINARY_NAME,
   });
 
-  return cloudinary.api
-    .sub_folders("Inspiration")
-    .then((res) => res.folders) as Promise<
+  return cloudinary.api.sub_folders("Inspiration").then((res) => res.folders) as Promise<
     Array<{ name: string; external_id: string }>
   >;
 });
@@ -65,9 +63,8 @@ function App() {
         <div className="flex flex-col gap-3">
           <h1 className="text-3xl">Hej, I'm Albin</h1>
           <p className="text-gray-400 text-balance leading-relaxed">
-            I'm a web and app developer with 8+ years of React/React-Native and
-            TypeScript experience. Design enthusiast, speaker, and Open Source
-            maintainer.
+            I'm a web and app developer with 8+ years of React/React-Native and TypeScript
+            experience. Design enthusiast, speaker, and Open Source maintainer.
           </p>
         </div>
 

@@ -84,7 +84,6 @@ tags:
   - optional
   - tags
 ---
-
 Your content here...
 ```
 

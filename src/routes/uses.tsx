@@ -8,8 +8,7 @@ export const Route = createFileRoute("/uses")({
     const siteUrl = "https://abgn.me";
     const pageUrl = `${siteUrl}/uses`;
     const title = "Uses | abgn.me";
-    const description =
-      "Software and tools I use on a daily basis for web and app development.";
+    const description = "Software and tools I use on a daily basis for web and app development.";
 
     return {
       meta: [
@@ -36,17 +35,12 @@ function UsesPage() {
     <ArticleLayout
       header={
         <>
-          <img
-            src="/setup.jpg"
-            alt="My setup"
-            className="w-full aspect-video object-cover"
-          />
+          <img src="/setup.jpg" alt="My setup" className="w-full aspect-video object-cover" />
 
           <h1 className="text-4xl text-balance leading-tight">Uses</h1>
           <p className="text-xl text-gray-400 text-balance leading-normal">
-            I've spent about 9 years tweaking and refining my setup to be as
-            productive and enjoyable as possible. Here's a list of the software
-            I use on a daily basis.
+            I've spent about 9 years tweaking and refining my setup to be as productive and
+            enjoyable as possible. Here's a list of the software I use on a daily basis.
           </p>
           <time className="text-gray-500">Updated January 3, 2026</time>
         </>
@@ -61,10 +55,7 @@ function UsesPage() {
           </a>
           <ul>
             <li>
-              <a
-                href="https://github.com/albingroen/quick.nvim"
-                target="_blank"
-              >
+              <a href="https://github.com/albingroen/quick.nvim" target="_blank">
                 Configuration
               </a>
             </li>
@@ -105,10 +96,7 @@ function UsesPage() {
           </a>
           <ul>
             <li>
-              <a
-                href="https://github.com/albingroen/dotfiles/tree/main/fish"
-                target="_blank"
-              >
+              <a href="https://github.com/albingroen/dotfiles/tree/main/fish" target="_blank">
                 Configuration
               </a>
             </li>
@@ -157,10 +145,7 @@ function UsesPage() {
       <h3>Desk</h3>
       <ul>
         <li>
-          <a
-            href="https://www.apple.com/shop/buy-mac/macbook-pro"
-            target="_blank"
-          >
+          <a href="https://www.apple.com/shop/buy-mac/macbook-pro" target="_blank">
             MacBook Pro M3 Pro
           </a>
         </li>
@@ -200,10 +185,7 @@ function UsesPage() {
           </a>
         </li>
         <li>
-          <a
-            href="https://fujifilm-x.com/products/cameras/x100v"
-            target="_blank"
-          >
+          <a href="https://fujifilm-x.com/products/cameras/x100v" target="_blank">
             Fujifilm X100V
           </a>
         </li>
@@ -217,10 +199,7 @@ function UsesPage() {
           </a>
         </li>
         <li>
-          <a
-            href="https://www.shure.com/en-US/products/earphones/se215"
-            target="_blank"
-          >
+          <a href="https://www.shure.com/en-US/products/earphones/se215" target="_blank">
             Shure SE215
           </a>
         </li>

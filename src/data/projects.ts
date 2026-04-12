@@ -10,8 +10,7 @@ export const getProjects = async () => {
     {
       id: 1,
       title: "prismabuilder.io",
-      description:
-        "Build your Prisma schema visually in this easy-to-use web based tool.",
+      description: "Build your Prisma schema visually in this easy-to-use web based tool.",
       href: "https://prismabuilder.io",
       lastCommit: "2025-09-16",
     },
@@ -41,8 +40,7 @@ export const getProjects = async () => {
     {
       id: 5,
       title: "bostadskollen",
-      description:
-        "Ta reda på vad en bostadsrätt egentligen skulle kosta dig varje månad.",
+      description: "Ta reda på vad en bostadsrätt egentligen skulle kosta dig varje månad.",
       href: "https://github.com/albingroen/bostadskollen",
       lastCommit: "2025-02-15",
     },
@@ -64,16 +62,14 @@ export const getProjects = async () => {
     {
       id: 8,
       title: "unique-pairs",
-      description:
-        "Given an array of strings, return an object where each field/value is unique.",
+      description: "Given an array of strings, return an object where each field/value is unique.",
       href: "https://github.com/albingroen/unique-pairs",
       lastCommit: "2021-10-14",
     },
     {
       id: 9,
       title: "utilcomps",
-      description:
-        "Utilitarian component library written in Svelte, for Svelte.",
+      description: "Utilitarian component library written in Svelte, for Svelte.",
       href: "https://github.com/albingroen/utilcomps",
       lastCommit: "2021-10-07",
     },
@@ -87,8 +83,7 @@ export const getProjects = async () => {
     {
       id: 11,
       title: "gh-status-updater",
-      description:
-        "A simple command you can use to update your GitHub profile status.",
+      description: "A simple command you can use to update your GitHub profile status.",
       href: "https://github.com/albingroen/gh-status-updater",
       lastCommit: "2021-05-25",
     },
@@ -103,7 +98,6 @@ export const getProjects = async () => {
   ];
 
   return projects.toSorted(
-    (a, b) =>
-      new Date(b.lastCommit).getTime() - new Date(a.lastCommit).getTime(),
+    (a, b) => new Date(b.lastCommit).getTime() - new Date(a.lastCommit).getTime(),
   );
 };
