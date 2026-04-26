@@ -18,6 +18,11 @@
   --color-gray-950: var(--color-stone-950);
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-600) transparent;
+}
+
 body {
   @apply antialiased bg-gray-900;
 }
